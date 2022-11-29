@@ -1,0 +1,113 @@
+{
+  "title": "Extensions fields for OpenAPI v3.0.x",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "x-extends": [
+    {
+      "paths": ["properties"],
+      "properties": {
+        "x-sap-shortText": {
+          "type": "string",
+          "description": "To display a short description of your APIs"
+        },
+        "x-sap-software-min-version": {
+          "type": "string",
+          "description": "To provide the minimum software version"
+        },
+        "x-sap-api-type": {
+          "type": "string",
+          "oneOf": [
+            {
+              "enum": ["REST", "SOAP", "ODATA", "ODATAV4"]
+            },
+            {
+              "enum": ["rest", "soap", "odata", "odatav4"]
+            }
+          ],
+          "description": "Type of API"
+        },
+        "x-sap-ext-overview": {
+          "type": "array",
+          "description": "To provide stakeholder-specific information",
+          "items": {
+            "type": "object",
+            "required": ["name", "values"],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "oneOf": [{ "type": "string" }, { "type": "object" }]
+                }
+              }
+            }
+          }
+        },
+        "x-sap-stateInfo": {
+          "type": "object",
+          "description": "API Status",
+          "properties": {
+            
+          }
+        }
+      }
+    },
+    {
+      "paths": [
+        "definitions.ImplicitOAuthFlow.properties",
+        "definitions.AuthorizationCodeOAuthFlow.properties"
+      ],
+      "properties": {
+        "x-sap-authorizationTemplateUrl": {
+          "$ref": "#/definitions/x-sap-templateUrl"
+        }
+      }
+    },
+    {
+      "paths": [
+        "definitions.PasswordOAuthFlow.properties",
+        "definitions.ClientCredentialsFlow.properties",
+        "definitions.AuthorizationCodeOAuthFlow.properties"
+      ],
+      "properties": {
+        "x-sap-tokenTemplateUrl": {
+          "$ref": "#/definitions/x-sap-templateUrl"
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "x-sap-templateUrl": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "variables"],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri-template"
+        },
+        "variables": {
+          "type": "object",
+          "required": ["default", "description"],
+          "properties": {
+            "enum": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "default": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

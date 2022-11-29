@@ -1,0 +1,134 @@
+{
+  "title": "SAP common extensions fields for OpenAPI v2.0/v3.0.x",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "x-extends": [
+    {
+      "paths": ["properties"],
+      "properties": {
+        "x-sap-compliance-level": {
+          "type": "string",
+          "description": "The compliance level that this API resource is expected to be compliant with. This corresponds to the [ORD policy level](https://pages.github.tools.sap/CentralEngineering/open-resource-discovery-specification/#/v1/generated/Document?id=package_policylevel) concept.",
+          "enum": ["sap:base:v1", "sap:core:v1", "sap:core:v2"]
+        },
+        "x-sap-shortText": {
+          "type": "string",
+          "description": "To display a short description of your APIs"
+        },
+        "x-sap-software-min-version": {
+          "type": "string",
+          "description": "To provide the minimum software version"
+        },
+        "x-sap-api-type": {
+          "type": "string",
+          "description": "Type of API",
+          "oneOf": [
+            {
+              "enum": ["REST", "SOAP", "ODATA", "ODATAV4"]
+            },
+            {
+              "enum": ["rest", "soap", "odata", "odatav4"]
+            }
+          ],
+          "examples": ["REST", "SOAP", "ODATA", "ODATAV4"]
+        },
+        "x-sap-ext-overview": {
+          "type": "array",
+          "description": "To provide stakeholder-specific information",
+          "items": {
+            "type": "object",
+            "required": ["name", "values"],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "oneOf": [{ "type": "string" }, { "type": "object" }]
+                }
+              }
+            }
+          }
+        },
+        "x-sap-stateInfo": {
+          "type": "object",
+          "description": "API Status",
+          "required": ["state"],
+          "properties": {
+            "state": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[Bb][Ee][Tt][Aa]$",
+                  "description": "Indicates API status."
+                },
+                {
+                  "type": "string",
+                  "pattern": "^[Aa][Cc][Tt][Ii][Vv][Ee]$",
+                  "description": "Indicates API status."
+                },
+                {
+                  "type": "string",
+                  "pattern": "^[Dd][Ee][Pp][Rr][Ee][Cc][Aa][Tt][Ee][Dd]$",
+                  "description": "Indicates API status."
+                },
+                {
+                  "type": "string",
+                  "pattern": "^[Dd][Ee][Cc][Oo][Mm][Mm][Ii][Ss][Ss][Ii][Oo][Nn][Ee][Dd]$",
+                  "description": "Indicates API status."
+                }
+              ],
+              "examples": ["Beta", "Active", "Deprecated", "Decommissioned"]
+            },
+            "deprecationDate": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "date",
+                  "examples": ["2022-01-01", "2021-11-14"],
+                  "description": "Deprecation date of an API (when the deprecation process started)."
+                },
+                {
+                  "type": "string",
+                  "pattern": "^[0-9]{2} [A-Za-z]{3} [0-9]{4}$",
+                  "examples": ["01 Jan 2022", "14 Nov 2021"],
+                  "description": "Deprecation date of an API (when the deprecation process started)."
+                }
+              ]
+            },
+            "decommissionedDate": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "date",
+                  "examples": ["2022-01-01", "2021-11-14"],
+                  "description": "Decommission date of an API (sunset data, when it will not be available anymore)."
+                },
+                {
+                  "type": "string",
+                  "pattern": "^[0-9]{2} [A-Za-z]{3} [0-9]{4}$",
+                  "examples": ["01 Jan 2022", "14 Nov 2021"],
+                  "description": "Decommission date of an API (sunset data, when it will not be available anymore)."
+                }
+              ]
+            },
+            "successorApi": {
+              "type": "string",
+              "format": "uri-reference",
+              "description": "Provides an URL to a successor API."
+            }
+          },
+          "additionalProperties": false
+        },
+        "x-sap-direction": {
+          "type": "string",
+          "description": "Indicates the direction of an API",
+          "enum": ["inbound", "outbound", "mixed"],
+          "default": "inbound"
+        }
+      }
+    }
+  ]
+}

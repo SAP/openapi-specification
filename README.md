@@ -1,3 +1,5 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP/openapi-specification)](https://api.reuse.software/info/github.com/SAP/openapi-specification)
+
 # OpenAPI Specification for SAP Ecosystem
 
 This repository contains extensions to the original [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification) which are relevant for SAP Ecosystem and corresponding tooling. Additionally, it provides a compiled "ready to use" version of schema files which includes the original schemas with SAP-specific changes on top.

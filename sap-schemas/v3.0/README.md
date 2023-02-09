@@ -176,7 +176,7 @@ Example:
 
 - Type: `String`
 - Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema)
-- Description: Name of an ODM entity as a general concept, not a concrete version thereof. <br/> The annotated OData entity is one of many representations of the ODM entity. Annotating the OData entity with this term helps consumers find APIs that process or expose the same entity.
+- Description: Name of an ODM entity as a general concept, not a concrete version thereof. <br/> The annotated schema is one of many representations of the ODM entity. Annotating the schema with this term helps consumers find APIs that process or expose the same entity.
 
 Constraints:
 

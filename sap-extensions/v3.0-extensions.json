@@ -4,10 +4,22 @@
   "type": "object",
   "x-extends": [
     {
+      "paths": ["definitions.Schema.properties"],
+      "properties": {
+        "x-sap-odm-entity-name": {
+          "type": "string",
+          "description": "Name of an ODM entity as a general concept, not a concrete version thereof. The annotated schema is one of many representations of the ODM entity. Annotating the schema with this term helps consumers find APIs that process or expose the same entity."
+        },
+        "x-sap-odm-oid": {
+          "type": "string",
+          "description": "The named field is an OID (ODM identifier), and it uniquely identifies an ODM root entity in a customer landscape. The technical type can be UUID or String (typical length 128), and the value must be stable and unique at least within type and landscape (better globally). An entity may have other IDs, i.e. a local ID and other alternative IDs."
+        }
+      }
+    },
+    {
       "paths": [
         "definitions.ImplicitOAuthFlow.properties",
         "definitions.AuthorizationCodeOAuthFlow.properties"
-        
       ],
       "properties": {
         "authorizationUrl": {
@@ -52,11 +64,7 @@
               "properties": {
                 "supported": {
                   "type": "string",
-                  "enum": [
-                    "no",
-                    "manual",
-                    "automatic"
-                  ],
+                  "enum": ["no", "manual", "automatic"],
                   "description": "This property defines whether the resource is extensible.\n\n**Not extensible** means that the data model of the resource (i.e. API or event) cannot be extended with custom fields.\n**Manually extensible** means that in addition to defining a custom field, manual activities to include the field in the data model of the resource (i.e. API or event) are required. E.g. using a specific mapping tool or by selecting the resource in the data model extension tool.\n**Automatically extensible** means that after defining a custom field in the local domain model, the resource (i.e. API or event) is automatically extended as part of the default extension field definition."
                 },
                 "description": {
@@ -68,20 +76,14 @@
                   ]
                 }
               },
-              "required": [
-                "supported"
-              ]
+              "required": ["supported"]
             },
             {
               "description": "Contains information about the extensibility of this resource.\n\nIf applicable, a description and further resources about extending this resource are provided.\nThis property is a backport from the ORD extensibility property.",
               "properties": {
                 "type": {
                   "type": "string",
-                  "enum": [
-                    "no",
-                    "manual",
-                    "automatic"
-                  ],
+                  "enum": ["no", "manual", "automatic"],
                   "description": "This property defines whether the resource is extensible.\n\n**Not extensible** means that the data model of the resource (i.e. API or event) cannot be extended with custom fields.\n**Manually extensible** means that in addition to defining a custom field, manual activities to include the field in the data model of the resource (i.e. API or event) are required. E.g. using a specific mapping tool or by selecting the resource in the data model extension tool.\n**Automatically extensible** means that after defining a custom field in the local domain model, the resource (i.e. API or event) is automatically extended as part of the default extension field definition."
                 },
                 "description": {
@@ -93,9 +95,7 @@
                   ]
                 }
               },
-              "required": [
-                "type"
-              ]
+              "required": ["type"]
             }
           ]
         }

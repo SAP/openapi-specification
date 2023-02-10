@@ -3,11 +3,7 @@
   "id": "http://swagger.io/v2/schema.json#",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "required": [
-    "swagger",
-    "info",
-    "paths"
-  ],
+  "required": ["swagger", "info", "paths"],
   "additionalProperties": false,
   "patternProperties": {
     "^x-": {
@@ -17,9 +13,7 @@
   "properties": {
     "swagger": {
       "type": "string",
-      "enum": [
-        "2.0"
-      ],
+      "enum": ["2.0"],
       "description": "The Swagger version of this document."
     },
     "info": {
@@ -85,11 +79,7 @@
     "x-sap-compliance-level": {
       "type": "string",
       "description": "The compliance level that this API resource is expected to be compliant with. This corresponds to the [ORD policy level](https://pages.github.tools.sap/CentralEngineering/open-resource-discovery-specification/#/v1/generated/Document?id=package_policylevel) concept.",
-      "enum": [
-        "sap:base:v1",
-        "sap:core:v1",
-        "sap:core:v2"
-      ]
+      "enum": ["sap:base:v1", "sap:core:v1", "sap:core:v2"]
     },
     "x-sap-shortText": {
       "type": "string",
@@ -104,38 +94,20 @@
       "description": "Type of API",
       "oneOf": [
         {
-          "enum": [
-            "REST",
-            "SOAP",
-            "ODATA",
-            "ODATAV4"
-          ]
+          "enum": ["REST", "SOAP", "ODATA", "ODATAV4"]
         },
         {
-          "enum": [
-            "rest",
-            "soap",
-            "odata",
-            "odatav4"
-          ]
+          "enum": ["rest", "soap", "odata", "odatav4"]
         }
       ],
-      "examples": [
-        "REST",
-        "SOAP",
-        "ODATA",
-        "ODATAV4"
-      ]
+      "examples": ["REST", "SOAP", "ODATA", "ODATAV4"]
     },
     "x-sap-ext-overview": {
       "type": "array",
       "description": "To provide stakeholder-specific information",
       "items": {
         "type": "object",
-        "required": [
-          "name",
-          "values"
-        ],
+        "required": ["name", "values"],
         "additionalProperties": false,
         "properties": {
           "name": {
@@ -160,9 +132,7 @@
     "x-sap-stateInfo": {
       "type": "object",
       "description": "API Status",
-      "required": [
-        "state"
-      ],
+      "required": ["state"],
       "properties": {
         "state": {
           "oneOf": [
@@ -187,31 +157,20 @@
               "description": "Indicates API status."
             }
           ],
-          "examples": [
-            "Beta",
-            "Active",
-            "Deprecated",
-            "Decommissioned"
-          ]
+          "examples": ["Beta", "Active", "Deprecated", "Decommissioned"]
         },
         "deprecationDate": {
           "oneOf": [
             {
               "type": "string",
               "format": "date",
-              "examples": [
-                "2022-01-01",
-                "2021-11-14"
-              ],
+              "examples": ["2022-01-01", "2021-11-14"],
               "description": "Deprecation date of an API (when the deprecation process started)."
             },
             {
               "type": "string",
               "pattern": "^[0-9]{2} [A-Za-z]{3} [0-9]{4}$",
-              "examples": [
-                "01 Jan 2022",
-                "14 Nov 2021"
-              ],
+              "examples": ["01 Jan 2022", "14 Nov 2021"],
               "description": "Deprecation date of an API (when the deprecation process started)."
             }
           ]
@@ -221,19 +180,13 @@
             {
               "type": "string",
               "format": "date",
-              "examples": [
-                "2022-01-01",
-                "2021-11-14"
-              ],
+              "examples": ["2022-01-01", "2021-11-14"],
               "description": "Decommission date of an API (sunset data, when it will not be available anymore)."
             },
             {
               "type": "string",
               "pattern": "^[0-9]{2} [A-Za-z]{3} [0-9]{4}$",
-              "examples": [
-                "01 Jan 2022",
-                "14 Nov 2021"
-              ],
+              "examples": ["01 Jan 2022", "14 Nov 2021"],
               "description": "Decommission date of an API (sunset data, when it will not be available anymore)."
             }
           ]
@@ -249,11 +202,7 @@
     "x-sap-direction": {
       "type": "string",
       "description": "Indicates the direction of an API",
-      "enum": [
-        "inbound",
-        "outbound",
-        "mixed"
-      ],
+      "enum": ["inbound", "outbound", "mixed"],
       "default": "inbound"
     },
     "x-servers": {
@@ -261,9 +210,7 @@
       "description": "To specify multiple hosts",
       "items": {
         "type": "object",
-        "required": [
-          "url"
-        ],
+        "required": ["url"],
         "properties": {
           "url": {
             "type": "string"
@@ -302,11 +249,7 @@
       "properties": {
         "supported": {
           "type": "string",
-          "enum": [
-            "no",
-            "manual",
-            "automatic"
-          ],
+          "enum": ["no", "manual", "automatic"],
           "description": "This property defines whether the resource is extensible.\n\n**Not extensible** means that the data model of the resource (i.e. API or event) cannot be extended with custom fields.\n**Manually extensible** means that in addition to defining a custom field, manual activities to include the field in the data model of the resource (i.e. API or event) are required. E.g. using a specific mapping tool or by selecting the resource in the data model extension tool.\n**Automatically extensible** means that after defining a custom field in the local domain model, the resource (i.e. API or event) is automatically extended as part of the default extension field definition."
         },
         "description": {
@@ -319,19 +262,14 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "supported"
-      ]
+      "required": ["supported"]
     }
   },
   "definitions": {
     "info": {
       "type": "object",
       "description": "General information about the API.",
-      "required": [
-        "version",
-        "title"
-      ],
+      "required": ["version", "title"],
       "additionalProperties": false,
       "patternProperties": {
         "^x-": {
@@ -391,9 +329,7 @@
     },
     "license": {
       "type": "object",
-      "required": [
-        "name"
-      ],
+      "required": ["name"],
       "additionalProperties": false,
       "properties": {
         "name": {
@@ -450,9 +386,7 @@
       "type": "object",
       "additionalProperties": false,
       "description": "information about external documentation",
-      "required": [
-        "url"
-      ],
+      "required": ["url"],
       "properties": {
         "description": {
           "type": "string"
@@ -478,9 +412,7 @@
     },
     "operation": {
       "type": "object",
-      "required": [
-        "responses"
-      ],
+      "required": ["responses"],
       "additionalProperties": false,
       "patternProperties": {
         "^x-": {
@@ -617,9 +549,7 @@
     },
     "response": {
       "type": "object",
-      "required": [
-        "description"
-      ],
+      "required": ["description"],
       "properties": {
         "description": {
           "type": "string"
@@ -657,19 +587,11 @@
     "header": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "type"
-      ],
+      "required": ["type"],
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "string",
-            "number",
-            "integer",
-            "boolean",
-            "array"
-          ]
+          "enum": ["string", "number", "integer", "boolean", "array"]
         },
         "format": {
           "type": "string"
@@ -736,11 +658,7 @@
     },
     "bodyParameter": {
       "type": "object",
-      "required": [
-        "name",
-        "in",
-        "schema"
-      ],
+      "required": ["name", "in", "schema"],
       "patternProperties": {
         "^x-": {
           "$ref": "#/definitions/vendorExtension"
@@ -758,9 +676,7 @@
         "in": {
           "type": "string",
           "description": "Determines the location of the parameter.",
-          "enum": [
-            "body"
-          ]
+          "enum": ["body"]
         },
         "required": {
           "type": "boolean",
@@ -789,9 +705,7 @@
         "in": {
           "type": "string",
           "description": "Determines the location of the parameter.",
-          "enum": [
-            "header"
-          ]
+          "enum": ["header"]
         },
         "description": {
           "type": "string",
@@ -803,13 +717,7 @@
         },
         "type": {
           "type": "string",
-          "enum": [
-            "string",
-            "number",
-            "boolean",
-            "integer",
-            "array"
-          ]
+          "enum": ["string", "number", "boolean", "integer", "array"]
         },
         "format": {
           "type": "string"
@@ -877,9 +785,7 @@
         "in": {
           "type": "string",
           "description": "Determines the location of the parameter.",
-          "enum": [
-            "query"
-          ]
+          "enum": ["query"]
         },
         "description": {
           "type": "string",
@@ -896,13 +802,7 @@
         },
         "type": {
           "type": "string",
-          "enum": [
-            "string",
-            "number",
-            "boolean",
-            "integer",
-            "array"
-          ]
+          "enum": ["string", "number", "boolean", "integer", "array"]
         },
         "format": {
           "type": "string"
@@ -970,9 +870,7 @@
         "in": {
           "type": "string",
           "description": "Determines the location of the parameter.",
-          "enum": [
-            "formData"
-          ]
+          "enum": ["formData"]
         },
         "description": {
           "type": "string",
@@ -989,14 +887,7 @@
         },
         "type": {
           "type": "string",
-          "enum": [
-            "string",
-            "number",
-            "boolean",
-            "integer",
-            "array",
-            "file"
-          ]
+          "enum": ["string", "number", "boolean", "integer", "array", "file"]
         },
         "format": {
           "type": "string"
@@ -1055,23 +946,17 @@
           "$ref": "#/definitions/vendorExtension"
         }
       },
-      "required": [
-        "required"
-      ],
+      "required": ["required"],
       "properties": {
         "required": {
           "type": "boolean",
-          "enum": [
-            true
-          ],
+          "enum": [true],
           "description": "Determines whether or not this parameter is required or optional."
         },
         "in": {
           "type": "string",
           "description": "Determines the location of the parameter.",
-          "enum": [
-            "path"
-          ]
+          "enum": ["path"]
         },
         "description": {
           "type": "string",
@@ -1083,13 +968,7 @@
         },
         "type": {
           "type": "string",
-          "enum": [
-            "string",
-            "number",
-            "boolean",
-            "integer",
-            "array"
-          ]
+          "enum": ["string", "number", "boolean", "integer", "array"]
         },
         "format": {
           "type": "string"
@@ -1143,11 +1022,7 @@
     },
     "nonBodyParameter": {
       "type": "object",
-      "required": [
-        "name",
-        "in",
-        "type"
-      ],
+      "required": ["name", "in", "type"],
       "oneOf": [
         {
           "$ref": "#/definitions/headerParameterSubSchema"
@@ -1364,7 +1239,15 @@
         "externalDocs": {
           "$ref": "#/definitions/externalDocs"
         },
-        "example": {}
+        "example": {},
+        "x-sap-odm-entity-name": {
+          "type": "string",
+          "description": "Name of an ODM entity as a general concept, not a concrete version thereof"
+        },
+        "x-sap-odm-oid": {
+          "type": "string",
+          "description": "The named field is an OID (ODM identifier), and it uniquely identifies an ODM root entity in a customer landscape."
+        }
       },
       "additionalProperties": false
     },
@@ -1376,9 +1259,7 @@
           "$ref": "#/definitions/vendorExtension"
         }
       },
-      "required": [
-        "type"
-      ],
+      "required": ["type"],
       "properties": {
         "format": {
           "type": "string"
@@ -1400,9 +1281,7 @@
         },
         "type": {
           "type": "string",
-          "enum": [
-            "file"
-          ]
+          "enum": ["file"]
         },
         "readOnly": {
           "type": "boolean",
@@ -1421,13 +1300,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "string",
-            "number",
-            "integer",
-            "boolean",
-            "array"
-          ]
+          "enum": ["string", "number", "integer", "boolean", "array"]
         },
         "format": {
           "type": "string"
@@ -1532,9 +1405,7 @@
     "tag": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "name"
-      ],
+      "required": ["name"],
       "properties": {
         "name": {
           "type": "string"
@@ -1580,15 +1451,11 @@
     "basicAuthenticationSecurity": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "type"
-      ],
+      "required": ["type"],
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "basic"
-          ]
+          "enum": ["basic"]
         },
         "description": {
           "type": "string"
@@ -1603,27 +1470,18 @@
     "apiKeySecurity": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "type",
-        "name",
-        "in"
-      ],
+      "required": ["type", "name", "in"],
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "apiKey"
-          ]
+          "enum": ["apiKey"]
         },
         "name": {
           "type": "string"
         },
         "in": {
           "type": "string",
-          "enum": [
-            "header",
-            "query"
-          ]
+          "enum": ["header", "query"]
         },
         "description": {
           "type": "string"
@@ -1638,23 +1496,15 @@
     "oauth2ImplicitSecurity": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "type",
-        "flow",
-        "authorizationUrl"
-      ],
+      "required": ["type", "flow", "authorizationUrl"],
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "oauth2"
-          ]
+          "enum": ["oauth2"]
         },
         "flow": {
           "type": "string",
-          "enum": [
-            "implicit"
-          ]
+          "enum": ["implicit"]
         },
         "scopes": {
           "$ref": "#/definitions/oauth2Scopes"
@@ -1675,23 +1525,15 @@
     "oauth2PasswordSecurity": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "type",
-        "flow",
-        "tokenUrl"
-      ],
+      "required": ["type", "flow", "tokenUrl"],
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "oauth2"
-          ]
+          "enum": ["oauth2"]
         },
         "flow": {
           "type": "string",
-          "enum": [
-            "password"
-          ]
+          "enum": ["password"]
         },
         "scopes": {
           "$ref": "#/definitions/oauth2Scopes"
@@ -1712,23 +1554,15 @@
     "oauth2ApplicationSecurity": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "type",
-        "flow",
-        "tokenUrl"
-      ],
+      "required": ["type", "flow", "tokenUrl"],
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "oauth2"
-          ]
+          "enum": ["oauth2"]
         },
         "flow": {
           "type": "string",
-          "enum": [
-            "application"
-          ]
+          "enum": ["application"]
         },
         "scopes": {
           "$ref": "#/definitions/oauth2Scopes"
@@ -1749,24 +1583,15 @@
     "oauth2AccessCodeSecurity": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "type",
-        "flow",
-        "authorizationUrl",
-        "tokenUrl"
-      ],
+      "required": ["type", "flow", "authorizationUrl", "tokenUrl"],
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "oauth2"
-          ]
+          "enum": ["oauth2"]
         },
         "flow": {
           "type": "string",
-          "enum": [
-            "accessCode"
-          ]
+          "enum": ["accessCode"]
         },
         "scopes": {
           "$ref": "#/definitions/oauth2Scopes"
@@ -1821,34 +1646,18 @@
       "description": "The transfer protocol of the API.",
       "items": {
         "type": "string",
-        "enum": [
-          "http",
-          "https",
-          "ws",
-          "wss"
-        ]
+        "enum": ["http", "https", "ws", "wss"]
       },
       "uniqueItems": true
     },
     "collectionFormat": {
       "type": "string",
-      "enum": [
-        "csv",
-        "ssv",
-        "tsv",
-        "pipes"
-      ],
+      "enum": ["csv", "ssv", "tsv", "pipes"],
       "default": "csv"
     },
     "collectionFormatWithMulti": {
       "type": "string",
-      "enum": [
-        "csv",
-        "ssv",
-        "tsv",
-        "pipes",
-        "multi"
-      ],
+      "enum": ["csv", "ssv", "tsv", "pipes", "multi"],
       "default": "csv"
     },
     "title": {
@@ -1922,9 +1731,7 @@
     },
     "jsonReference": {
       "type": "object",
-      "required": [
-        "$ref"
-      ],
+      "required": ["$ref"],
       "additionalProperties": false,
       "properties": {
         "$ref": {

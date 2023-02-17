@@ -1242,11 +1242,11 @@
         "example": {},
         "x-sap-odm-entity-name": {
           "type": "string",
-          "description": "Name of an ODM entity as a general concept, not a concrete version thereof"
+          "description": "Name of an ODM entity as a general concept, not a concrete version thereof. The annotated schema is one of many representations of the ODM entity. Annotating the schema with this term helps consumers find APIs that process or expose the same entity."
         },
         "x-sap-odm-oid": {
           "type": "string",
-          "description": "The named field is an OID (ODM identifier), and it uniquely identifies an ODM root entity in a customer landscape."
+          "description": "The named field is an OID (ODM identifier), and it uniquely identifies an ODM root entity in a customer landscape. The technical type can be UUID or String (typical length 128), and the value must be stable and unique at least within type and landscape (better globally). An entity may have other IDs, i.e. a local ID and other alternative IDs."
         }
       },
       "additionalProperties": false

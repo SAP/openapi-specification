@@ -279,6 +279,7 @@ Example: `DECFLOAT34` value for `price`
                 "type": "string"
               }
             ],
+            "nullable": true,
             "format": "decimal",
             "x-sap-precision": 34
           }

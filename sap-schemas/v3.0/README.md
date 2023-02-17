@@ -76,13 +76,14 @@ Constraints:
 - OPTIONAL
 
 - Array Item:
+
   - Type: `Object`
   - Schema:
 
-    |Field Name|Type|Description|
-    |---|---|---|
-    |name|`String`|**REQUIRED**. Information title|
-    |values|`String` or `Object`|**REQUIRED**. Object type MAY contain any structure|
+    | Field Name | Type                 | Description                                         |
+    | ---------- | -------------------- | --------------------------------------------------- |
+    | name       | `String`             | **REQUIRED**. Information title                     |
+    | values     | `String` or `Object` | **REQUIRED**. Object type MAY contain any structure |
 
 Example:
 
@@ -119,12 +120,12 @@ Constraints:
 
 - OPTIONAL
 - Schema:
-    |Field Name|Type|Description|
-    |---|---|---|
-    |state|`String`|**REQUIRED**. API state. Possible values: `Beta`, `Active`, `Deprecated`, `Decommissioned`. Defaults to `Active` |
-    |deprecationDate|`String`|Deprecation date of the API (when the deprecation process started).<br><br>The `deprecationDate` must follow the [RFC 3339 full-date](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) format `yyyy-mm-dd`. For example: `2022-01-01`, `2021-11-14`<br><br>Consumers should use this date to know they should stop using this deprecated API. The provided date may be used to anticipate the decommission deadline, based on the rules for minimum lifespan (see [Deprecation Policy](https://sap.sharepoint.com/:w:/r/teams/CPAIntegration/_layouts/15/Doc.aspx?sourcedoc=%7B39FAC929-C93A-47D7-B299-3442A522F05F%7D&file=API%20Deprecation%20Policy.docx&action=default&mobileredirect=true)).|
-    |decommissionedDate|`String`|Decommission date of the API (sunset date, when it will not be available anymore).<br><br>The `decommissionedDate` must follow the [RFC 3339 full-date](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) format `yyyy-mm-dd`. For example: `2022-01-01`, `2021-11-14` |
-    |successorApi|`Uri`|Provides an URL to a successor API|
+  |Field Name|Type|Description|
+  |---|---|---|
+  |state|`String`|**REQUIRED**. API state. Possible values: `Beta`, `Active`, `Deprecated`, `Decommissioned`. Defaults to `Active` |
+  |deprecationDate|`String`|Deprecation date of the API (when the deprecation process started).<br><br>The `deprecationDate` must follow the [RFC 3339 full-date](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) format `yyyy-mm-dd`. For example: `2022-01-01`, `2021-11-14`<br><br>Consumers should use this date to know they should stop using this deprecated API. The provided date may be used to anticipate the decommission deadline, based on the rules for minimum lifespan (see [Deprecation Policy](https://sap.sharepoint.com/:w:/r/teams/CPAIntegration/_layouts/15/Doc.aspx?sourcedoc=%7B39FAC929-C93A-47D7-B299-3442A522F05F%7D&file=API%20Deprecation%20Policy.docx&action=default&mobileredirect=true)).|
+  |decommissionedDate|`String`|Decommission date of the API (sunset date, when it will not be available anymore).<br><br>The `decommissionedDate` must follow the [RFC 3339 full-date](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) format `yyyy-mm-dd`. For example: `2022-01-01`, `2021-11-14` |
+  |successorApi|`Uri`|Provides an URL to a successor API|
 
 ### `x-sap-extensible`
 
@@ -145,9 +146,10 @@ Example:
   "x-sap-extensible": {
     "supported": "manual",
     "description": "API can be extended by custom fields on the following business contexts (field usage for this API needs to be selected):\r\n* Procurement: Purchasing Document (MM_PURDOC_HEADER)\r\n* Procurement: Purchasing Document Item (MM_PURDOC_ITEM)\r\n\r\n[How to add an extension field to an API](https://help.sap.com/viewer/9a281eac983f4f688d0deedc96b3c61c/latest/en-US/57909455bf7c4fdd8bcf48d76c1eae33.html)"
-  },
+  }
 }
 ```
+
 ### `x-sap-direction`
 
 - Type: `String`
@@ -186,26 +188,25 @@ Example:
 
 ```json
 {
-    "components": {
-        "schemas": {
-            "Cat": {
-                "x-sap-odm-entity-name": "Cat",
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "integer",
-                        "format": "int64"
-                    },
-                    "name": {
-                        "type": "string"
-                    }
-                }
-            }
+  "components": {
+    "schemas": {
+      "Cat": {
+        "x-sap-odm-entity-name": "Cat",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          }
         }
+      }
     }
+  }
 }
 ```
-
 
 ### `x-sap-odm-oid`
 
@@ -223,22 +224,113 @@ The `x-sap-odm-oid` custom field points to the `oid` property which contains the
 
 ```json
 {
-    "components": {
-        "schemas": {
-            "Cat": {
-                "x-sap-odm-oid": "oid",
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "integer",
-                        "format": "int64"
-                    },
-                    "oid": {
-                        "type": "string"
-                    }
-                }
-            }
+  "components": {
+    "schemas": {
+      "Cat": {
+        "x-sap-odm-oid": "oid",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "oid": {
+            "type": "string"
+          }
         }
+      }
     }
+  }
+}
+```
+
+### `x-sap-precision`
+
+- Type: `Integer`
+- Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema)
+- Description: The maximum number of significant decimal digits of the numeric value.
+
+Constraints:
+
+- OPTIONAL
+- MUST be a positive integer
+- MUST be used with `"format": "decimal"`
+- MAY be used with `"type": "string"`, `"type": "number"`, or any combination with these
+
+Example: `DECFLOAT34` value for `price`
+
+```json
+{
+  "components": {
+    "schemas": {
+      "Product": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "price": {
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "format": "decimal",
+            "x-sap-precision": 34
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+### `x-sap-scale`
+
+- Type: `Integer`
+- Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema)
+- Description: The maximum number of decimal digits to the right of the decimal point.
+
+Constraints:
+
+- OPTIONAL
+- MUST be a non-negative integer
+- MUST be used with `"format": "decimal"`
+- MAY be used with `"type": "string"`, `"type": "number"`, or any combination with these
+
+Example: `DECIMAL(23,2)` value for `price`
+
+```json
+{
+  "components": {
+    "schemas": {
+      "Product": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "price": {
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "format": "decimal",
+            "x-sap-precision": 23,
+            "x-sap-scale": 2
+          }
+        }
+      }
+    }
+  }
 }
 ```

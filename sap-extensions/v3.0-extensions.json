@@ -13,6 +13,17 @@
         "x-sap-odm-oid": {
           "type": "string",
           "description": "The named field is an OID (ODM identifier), and it uniquely identifies an ODM root entity in a customer landscape. The technical type can be UUID or String (typical length 128), and the value must be stable and unique at least within type and landscape (better globally). An entity may have other IDs, i.e. a local ID and other alternative IDs."
+        },
+
+        "x-sap-precision": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "The maximum number of significant decimal digits of the numeric value."
+        },
+        "x-sap-scale": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "The maximum number of decimal digits to the right of the decimal point."
         }
       }
     },

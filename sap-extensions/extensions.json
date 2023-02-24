@@ -22,14 +22,7 @@
         "x-sap-api-type": {
           "type": "string",
           "description": "Type of API",
-          "oneOf": [
-            {
-              "enum": ["REST", "SOAP", "ODATA", "ODATAV4"]
-            },
-            {
-              "enum": ["rest", "soap", "odata", "odatav4"]
-            }
-          ],
+          "enum": ["REST", "SOAP", "ODATA", "ODATAV4"],
           "examples": ["REST", "SOAP", "ODATA", "ODATAV4"]
         },
         "x-sap-ext-overview": {

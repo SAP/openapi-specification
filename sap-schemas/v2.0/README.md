@@ -302,7 +302,7 @@ Constraints:
 
 - OPTIONAL
 - MUST be a positive integer
-- MUST be used with `"format": "decimal"`
+- MUST be used with [`"format": "decimal"`](https://spec.openapis.org/registry/format/decimal.html)
 - MAY be used with `"type": "string"`, `"type": "number"`, or any combination with these
 
 Example: `DECFLOAT34` value for `price`
@@ -340,7 +340,7 @@ Constraints:
 
 - OPTIONAL
 - MUST be a non-negative integer
-- MUST be used with `"format": "decimal"`
+- MUST be used with [`"format": "decimal"`](https://spec.openapis.org/registry/format/decimal.html)
 - MAY be used with `"type": "string"`, `"type": "number"`, or any combination with these
 
 Example: `DECIMAL(23,2)` value for `price`

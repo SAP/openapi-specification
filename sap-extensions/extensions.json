@@ -23,7 +23,7 @@
           "type": "string",
           "description": "Type of API",
           "enum": ["REST", "SOAP", "ODATA", "ODATAV4"],
-          "examples": ["REST", "SOAP", "ODATA", "ODATAV4"]
+          "example": "REST"
         },
         "x-sap-ext-overview": {
           "type": "array",

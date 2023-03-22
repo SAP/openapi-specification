@@ -247,7 +247,7 @@ The `x-sap-odm-oid` custom field points to the `oid` property which contains the
 ### `x-sap-precision`
 
 - Type: `Integer`
-- Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema)
+- Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
 - Description: The maximum number of significant decimal digits of the numeric value.
 
 Constraints:

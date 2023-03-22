@@ -295,14 +295,14 @@ The `x-sap-odm-oid` custom field points to the `oid` property which contains the
 ### `x-sap-precision`
 
 - Type: `Integer`
-- Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema)
+- Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
 - Description: The maximum number of significant decimal digits of the numeric value.
 
 Constraints:
 
 - OPTIONAL
 - MUST be a positive integer
-- MUST be used with `"format": "decimal"`
+- MUST be used with [`"format": "decimal"`](https://spec.openapis.org/registry/format/decimal.html)
 - MAY be used with `"type": "string"`, `"type": "number"`, or any combination with these
 
 Example: `DECFLOAT34` value for `price`
@@ -340,7 +340,7 @@ Constraints:
 
 - OPTIONAL
 - MUST be a non-negative integer
-- MUST be used with `"format": "decimal"`
+- MUST be used with [`"format": "decimal"`](https://spec.openapis.org/registry/format/decimal.html)
 - MAY be used with `"type": "string"`, `"type": "number"`, or any combination with these
 
 Example: `DECIMAL(23,2)` value for `price`

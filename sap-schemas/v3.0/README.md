@@ -257,39 +257,6 @@ Constraints:
 - MUST be used with [`"format": "decimal"`](https://spec.openapis.org/registry/format/decimal.html)
 - MAY be used with `"type": "string"`, `"type": "number"`, or any combination with these
 
-Example: `DECFLOAT34` value for `price`
-
-```json
-{
-  "components": {
-    "schemas": {
-      "Product": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "price": {
-            "oneOf": [
-              {
-                "type": "number"
-              },
-              {
-                "type": "string"
-              }
-            ],
-            "nullable": true,
-            "format": "decimal",
-            "x-sap-precision": 34
-          }
-        }
-      }
-    }
-  }
-}
-```
-
 ### `x-sap-scale`
 
 - Type: `Integer`

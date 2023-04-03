@@ -177,7 +177,7 @@ Example:
 ### `x-sap-odm-entity-name`
 
 - Type: `String`
-- Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema)
+- Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
 - Description: Name of an ODM entity as a general concept, not a concrete version thereof. <br/> The annotated schema is one of many representations of the ODM entity. Annotating the schema with this term helps consumers find APIs that process or expose the same entity.
 
 Constraints:
@@ -211,7 +211,7 @@ Example:
 ### `x-sap-odm-oid`
 
 - Type: `String`
-- Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema)
+- Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
 - Description: The named field is an OID (ODM identifier), and it uniquely identifies an ODM root entity in a customer landscape. <br/> The technical type can be UUID or String (typical length 128), and the value must be stable and unique at least within type and landscape (better globally). An entity may have other IDs, i.e. a local ID and other alternative IDs.
 
 Constraints:
@@ -260,7 +260,7 @@ Constraints:
 ### `x-sap-scale`
 
 - Type: `Integer`
-- Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema)
+- Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
 - Description: The maximum number of decimal digits to the right of the decimal point.
 
 Constraints:

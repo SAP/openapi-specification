@@ -373,7 +373,7 @@ Example: `DECIMAL(23,2)` value for `price`
 
 - Type: `Boolean`
 - Used at: [Schema Object](https://spec.openapis.org/oas/v2.0#schema-object)
-- Description: Indicates if the marked object is an root entity.
+- Description: Indicates if the marked object is a root entity.
 
 Constraints:
 

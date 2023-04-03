@@ -1254,7 +1254,7 @@
         "x-sap-root-entity": {
           "type": "boolean",
           "default": false,
-          "description": "Indicates if the marked object is an root entity."
+          "description": "Indicates if the marked object is a root entity."
         }
       },
       "additionalProperties": false

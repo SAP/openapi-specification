@@ -335,3 +335,33 @@ Example: `DECIMAL(23,2)` value for `price`
   }
 }
 ```
+
+### `x-sap-root-entity`
+
+- Type: `Boolean`
+- Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
+- Description: Indicates if the marked object represents a root entity.
+
+Constraints:
+
+- OPTIONAL
+- Default: `false`
+
+```json
+{
+  "components": {
+    "schemas": {
+      "Product": {
+        "type": "object",
+        "x-sap-root-entity": true,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    }
+  }
+}
+```

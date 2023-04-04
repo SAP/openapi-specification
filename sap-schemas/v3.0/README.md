@@ -307,7 +307,7 @@ Example: `DECIMAL(23,2)` value for `price`
 
 - Type: `Boolean`
 - Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
-- Description: Indicates if the marked object represents a Root Entity. A Root Entity is the root of a business object. It has a distinct existence. Examples are real-world objects, like a workforce person or a piece of equipment or other more abstract real-world concepts, like a contract or an order. It has an independent lifetime / identity and is globally and uniquely addressable (through its unique identifier defined in the property specified by x-sap-odm-oid field).
+- Description: Indicates if the marked object represents a Root Entity. A Root Entity is the root of a business object. It has a distinct existence. Examples are real-world objects, like a workforce person or a piece of equipment or other more abstract real-world concepts, like a contract or an order. It has an independent lifetime / identity and is globally and uniquely addressable (through its unique identifier defined in the property specified by [x-sap-odm-oid](#x-sap-odm-oid) field).
 
 Constraints:
 

@@ -1250,6 +1250,11 @@
           "type": "integer",
           "minimum": 0,
           "description": "The maximum number of decimal digits to the right of the decimal point."
+        },
+        "x-sap-root-entity": {
+          "type": "boolean",
+          "default": false,
+          "description": "Indicates if the marked object represents a root entity."
         }
       },
       "additionalProperties": false

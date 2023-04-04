@@ -236,19 +236,17 @@ Example:
 
 ```json
 {
-  "components": {
-    "schemas": {
-      "Cat": {
-        "x-sap-odm-entity-name": "Cat",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "name": {
-            "type": "string"
-          }
+  "definitions": {
+    "Cat": {
+      "x-sap-odm-entity-name": "Cat",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
         }
       }
     }
@@ -272,19 +270,17 @@ The `x-sap-odm-oid` custom field points to the `oid` property which contains the
 
 ```json
 {
-  "components": {
-    "schemas": {
-      "Cat": {
-        "x-sap-odm-oid": "oid",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "oid": {
-            "type": "string"
-          }
+  "definitions": {
+    "Cat": {
+      "x-sap-odm-oid": "oid",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "oid": {
+          "type": "string"
         }
       }
     }
@@ -322,21 +318,19 @@ Example: `DECIMAL(23,2)` value for `price`
 
 ```json
 {
-  "components": {
-    "schemas": {
-      "Product": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "price": {
-            "type": ["number", "string"],
-            "format": "decimal",
-            "x-sap-precision": 23,
-            "x-sap-scale": 2
-          }
+  "definitions": {
+    "Product": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "price": {
+          "type": ["number", "string"],
+          "format": "decimal",
+          "x-sap-precision": 23,
+          "x-sap-scale": 2
         }
       }
     }

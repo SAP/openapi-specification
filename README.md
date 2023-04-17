@@ -29,28 +29,28 @@ No known issues.
 
 OpenAPI is based on the JSON type system and uses the `format` keyword for differentiating JSON types, and in some cases additional keywords:
 
-| [ABAP][abap]  | [CAP][cap]          | Java                 | [OData][odata]     | [SQL][hana]                              | OpenAPI type    | [OpenAPI format][formats] | OpenAPI keywords                   |
-| ------------- | ------------------- | -------------------- | ------------------ | ---------------------------------------- | --------------- | ------------------------- | ---------------------------------- |
-| RAW16, CHAR32 | UUID                | java.lang.String     | Edm.Guid           | VARBINARY(16), VARCHAR(32), NVARCHAR(36) | string          | uuid                      | -                                  |
-| ABAP_BOOL     | Boolean             | boolean              | Edm.Boolean        | BOOLEAN                                  | boolean         | -                         | -                                  |
-| b             | UInt8               | short                | Edm.Byte           | TINYINT                                  | integer         | uint8                     | -                                  |
-| -             | -                   | short                | Edm.SByte          | TINYINT                                  | integer         | int8                      | -                                  |
-| s             | Int16               | short                | Edm.Int16          | SMALLINT                                 | integer         | int16                     | -                                  |
-| i             | Int32, Integer      | int                  | Edm.Int32          | INTEGER                                  | integer         | int32                     | -                                  |
-| int8          | Int64, Integer64    | long                 | Edm.Int64          | BIGINT                                   | string, integer | int64                     | -                                  |
-| decfloat34    | Decimal             | java.math.BigDecimal | Edm.Decimal        | DECIMAL                                  | string, number  | decimal128                | -                                  |
-| p             | Decimal(p,s)        | java.math.BigDecimal | Edm.Decimal        | DECIMAL(p,s)                             | string, number  | decimal                   | [x-sap-precision, x-sap-scale][ps] |
-| f             | Double              | double               | Edm.Double         | DOUBLE                                   | number          | double                    |                                    |
-| d             | Date                | java.time.LocalData  | Edm.Date           | DATE                                     | string          | date                      | -                                  |
-| -             | -                   | java.time.Duration   | Edm.Duration       | -                                        | string          | duration                  | -                                  |
-| t             | Time                | java.time.LocalTime  | Edm.TimeOfDay      | TIME                                     | string          | (time)                    | -                                  |
-| utclong       | DateTime, Timestamp | java.time.Instant    | Edm.DateTimeOffset | TIMESTAMP                                | string          | date-time                 | -                                  |
-| string        | String              | java.lang.String     | Edm.String         | NVARCHAR                                 | string          | -                         | -                                  |
-| c, n          | String(n)           | java.lang.String     | Edm.String         | NVARCHAR(n)                              | string          | -                         | maxLength: n                       |
-| xstring       | Binary              | byte[]               | Edm.Binary         | VARBINARY                                | string          | base64url                 | -                                  |
-| x             | Binary(n)           | byte[]               | Edm.Binary         | VARBINARY(n)                             | string          | base64url                 | maxLength: n                       |
-| xstring       | LargeBinary         | byte[]               | Edm.Binary         | BLOB                                     | string          | base64url                 | -                                  |
-| string        | LargeString         | java.lang.String     | Edm.String         | NCLOB                                    | string          | -                         | -                                  |
+| [ABAP][abap]                | [CAP][cap]          | Java                 | [OData][odata]     | [SQL][hana]                              | OpenAPI type    | [OpenAPI format][formats] | OpenAPI keywords                   |
+| --------------------------- | ------------------- | -------------------- | ------------------ | ---------------------------------------- | --------------- | ------------------------- | ---------------------------------- |
+| RAW16, CHAR32               | UUID                | java.lang.String     | Edm.Guid           | VARBINARY(16), VARCHAR(32), NVARCHAR(36) | string          | uuid                      | -                                  |
+| ABAP_BOOL                   | Boolean             | boolean              | Edm.Boolean        | BOOLEAN                                  | boolean         | -                         | -                                  |
+| b                           | UInt8               | short                | Edm.Byte           | TINYINT                                  | integer         | uint8                     | -                                  |
+| -                           | -                   | short                | Edm.SByte          | TINYINT                                  | integer         | int8                      | -                                  |
+| s                           | Int16               | short                | Edm.Int16          | SMALLINT                                 | integer         | int16                     | -                                  |
+| i                           | Int32, Integer      | int                  | Edm.Int32          | INTEGER                                  | integer         | int32                     | -                                  |
+| int8                        | Int64, Integer64    | long                 | Edm.Int64          | BIGINT                                   | string, integer | int64                     | -                                  |
+| decfloat34                  | Decimal             | java.math.BigDecimal | Edm.Decimal        | DECIMAL                                  | string, number  | decimal128                | -                                  |
+| p                           | Decimal(p,s)        | java.math.BigDecimal | Edm.Decimal        | DECIMAL(p,s)                             | string, number  | decimal                   | [x-sap-precision, x-sap-scale][ps] |
+| f                           | Double              | double               | Edm.Double         | DOUBLE                                   | number          | double                    |                                    |
+| d                           | Date                | java.time.LocalData  | Edm.Date           | DATE                                     | string          | date                      | -                                  |
+| /IWBEP/V4_EDM_TYPE_DURATION | -                   | java.time.Duration   | Edm.Duration       | -                                        | string          | duration                  | -                                  |
+| t                           | Time                | java.time.LocalTime  | Edm.TimeOfDay      | TIME                                     | string          | (time)                    | -                                  |
+| utclong                     | DateTime, Timestamp | java.time.Instant    | Edm.DateTimeOffset | TIMESTAMP                                | string          | date-time                 | -                                  |
+| string                      | String              | java.lang.String     | Edm.String         | NVARCHAR                                 | string          | -                         | -                                  |
+| c, n                        | String(n)           | java.lang.String     | Edm.String         | NVARCHAR(n)                              | string          | -                         | maxLength: n                       |
+| xstring                     | Binary              | byte[]               | Edm.Binary         | VARBINARY                                | string          | base64url                 | -                                  |
+| x                           | Binary(n)           | byte[]               | Edm.Binary         | VARBINARY(n)                             | string          | base64url                 | maxLength: n                       |
+| xstring                     | LargeBinary         | byte[]               | Edm.Binary         | BLOB                                     | string          | base64url                 | -                                  |
+| string                      | LargeString         | java.lang.String     | Edm.String         | NCLOB                                    | string          | -                         | -                                  |
 
 [abap]: https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abendata_types.htm
 [cap]: https://cap.cloud.sap/docs/cds/types

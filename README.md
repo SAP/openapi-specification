@@ -46,9 +46,9 @@ OpenAPI is based on the JSON type system and uses the `format` keyword for diffe
 | t                           | Time                | java.time.LocalTime  | Edm.TimeOfDay      | TIME                                     | string          | (time)                    | -                                  |
 | utclong                     | DateTime, Timestamp | java.time.Instant    | Edm.DateTimeOffset | TIMESTAMP                                | string          | date-time                 | -                                  |
 | string                      | String              | java.lang.String     | Edm.String         | NVARCHAR                                 | string          | -                         | -                                  |
-| c, n                        | String(n)           | java.lang.String     | Edm.String         | NVARCHAR(n)                              | string          | -                         | maxLength: n                       |
+| c, n                        | String(m)           | java.lang.String     | Edm.String         | NVARCHAR(m)                              | string          | -                         | maxLength: m                       |
 | xstring                     | Binary              | byte[]               | Edm.Binary         | VARBINARY                                | string          | base64url                 | -                                  |
-| x                           | Binary(n)           | byte[]               | Edm.Binary         | VARBINARY(n)                             | string          | base64url                 | maxLength: n                       |
+| x                           | Binary(m)           | byte[]               | Edm.Binary         | VARBINARY(m)                             | string          | base64url                 | maxLength: m                       |
 | xstring                     | LargeBinary         | byte[]               | Edm.Binary         | BLOB                                     | string          | base64url                 | -                                  |
 | string                      | LargeString         | java.lang.String     | Edm.String         | NCLOB                                    | string          | -                         | -                                  |
 

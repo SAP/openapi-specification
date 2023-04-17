@@ -31,7 +31,7 @@ OpenAPI is based on the JSON type system and uses the `format` keyword for diffe
 
 | [ABAP][abap] | [CAP][cap]          | Java                 | [OData][odata]     | [SQL][hana]  | OpenAPI type    | [OpenAPI format][formats] | OpenAPI keywords                   |
 | ------------ | ------------------- | -------------------- | ------------------ | ------------ | --------------- | ------------------------- | ---------------------------------- |
-| -            | UUID                | java.lang.String     | Edm.Guid           | -            | string          | uuid                      | -                                  |
+| RAW16, CHAR32 | UUID                | java.lang.String     | Edm.Guid           | VARBINARY(16), VARCHAR(32), NVARCHAR(36) | string          | uuid                      | -                                  |
 | -            | Boolean             | boolean              | Edm.Boolean        | BOOLEAN      | boolean         | -                         | -                                  |
 | b            | UInt8               | short                | Edm.Byte           | TINYINT      | integer         | uint8                     | -                                  |
 | -            | -                   | short                | Edm.SByte          | TINYINT      | integer         | int8                      | -                                  |

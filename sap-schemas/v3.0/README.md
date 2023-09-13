@@ -84,7 +84,7 @@ Constraints:
     | ---------- | -------------------- | --------------------------------------------------- |
     | name       | `String`             | **REQUIRED**. Information title                     |
     | values     | `String` or `Object` | **REQUIRED**. Object MUST follow the structure like described below |
-  - Values may be an object of the following structure:
+  - Values MUST be either a primitive string or an object of the following structure:
 
     | Field Name | Type                 | Description                                         |
     | ---------- | -------------------- | --------------------------------------------------- |

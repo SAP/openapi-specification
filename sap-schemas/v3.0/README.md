@@ -83,7 +83,7 @@ Constraints:
     | Field Name | Type                 | Description                                         |
     | ---------- | -------------------- | --------------------------------------------------- |
     | name       | `String`             | **REQUIRED**. Information title                     |
-    | values     | `String` or `Object` | **REQUIRED**. Object type MAY contain any structure |
+    | values     | `String` or `Object` | **REQUIRED**. Object MUST follow the structure like described below |
   - Values may be an object of the following structure:
 
     | Field Name | Type                 | Description                                         |

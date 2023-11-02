@@ -245,13 +245,19 @@ The `x-sap-odm-oid` custom field points to the `oid` property which contains the
 ```
 
 ### `x-sap-odm-oid-reference-entity-name`
+
 - Type: `String`
 - Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
 - Description: An annotation to specify the ODM entity name of the referenced entity if required. The annotation is to be used on property level and the value must be the entity name.
-  Constraints:
+
+Constraints:
+
 - OPTIONAL
-  Example:
-  The `x-sap-odm-oid-reference-entity` custom field points to the ODM entity `ReferencedEntity`.
+
+Example:
+
+The `x-sap-odm-oid-reference-entity` custom field points to the ODM entity `ReferencedEntity`.
+
 ```json
 {
   "components": {

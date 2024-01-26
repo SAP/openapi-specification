@@ -50,10 +50,6 @@
                           "type": "string",
                           "description": "The actual value for a given extension."
                         },
-                        "key": {
-                          "type": "string",
-                          "description": "The value key."
-                        },
                         "format": {
                           "type": "string",
                           "default": "plain",

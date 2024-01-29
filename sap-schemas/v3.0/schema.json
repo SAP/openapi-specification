@@ -1061,6 +1061,9 @@
           "items": {
             "$ref": "#/definitions/Server"
           }
+        },
+        "x-sap-action": {
+          "type": "boolean"
         }
       },
       "patternProperties": {

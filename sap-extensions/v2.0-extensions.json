@@ -36,6 +36,14 @@
       }
     },
     {
+      "paths": ["definitions.operation.properties"],
+      "properties": {
+        "x-sap-action": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
       "paths": ["properties"],
       "properties": {
         "x-servers": {

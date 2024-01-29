@@ -36,6 +36,14 @@
       }
     },
     {
+      "paths": ["definitions.Operation.properties"],
+      "properties": {
+        "x-sap-action": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
       "paths": [
         "definitions.ImplicitOAuthFlow.properties",
         "definitions.AuthorizationCodeOAuthFlow.properties"

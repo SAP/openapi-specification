@@ -466,6 +466,9 @@
         },
         "security": {
           "$ref": "#/definitions/security"
+        },
+        "x-sap-action": {
+          "type": "boolean"
         }
       }
     },

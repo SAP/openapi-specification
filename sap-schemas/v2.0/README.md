@@ -225,7 +225,7 @@ Example:
 ### `x-sap-action`
 
 - Type: `Boolean`
-- Used at: [Operation Object](https://spec.openapis.org/oas/v3.0.3#operation-object)
+- Used at: [Operation Object](https://spec.openapis.org/oas/v2.0#operation-object)
 - Description: Tags an operation as an "action"
 
 An action is an encapsulated state change for a resource.

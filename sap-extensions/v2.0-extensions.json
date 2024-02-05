@@ -38,8 +38,9 @@
     {
       "paths": ["definitions.operation.properties"],
       "properties": {
-        "x-sap-action": {
-          "type": "boolean"
+        "x-sap-operation-kind": {
+          "type": "string",
+          "enum": ["TODO"]
         }
       }
     },

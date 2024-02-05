@@ -1062,8 +1062,9 @@
             "$ref": "#/definitions/Server"
           }
         },
-        "x-sap-action": {
-          "type": "boolean"
+        "x-sap-operation-kind": {
+          "type": "string",
+          "enum": ["TODO"]
         }
       },
       "patternProperties": {

@@ -222,15 +222,13 @@ Example:
 
 ## Operation level extensions
 
-### `x-sap-action`
+### `x-sap-operation-kind`
 
-- Type: `Boolean`
+- Type: `String`
 - Used at: [Operation Object](https://spec.openapis.org/oas/v2.0#operation-object)
-- Description: Tags an operation as an "action"
+- Description: TODO
 
-An action is an encapsulated state change for a resource.
-Actions are typically named by suffixing the URL (pattern) of a resource with a verb or noun and are invoked via `POST`.
-To distinguish an action call from a request creating a sub-resource the action is tagged with `x-sap-action: true`.
+TODO: meaning, initial value list (adjust enums), mention that list can be extended
 
 Constraints:
 
@@ -243,7 +241,7 @@ Example:
   "paths": {
     "/products/123/publish": {
       "post": {
-        "x-sap-action": true,
+        "x-sap-operation-kind": "create-single",
         ...
       }
     }

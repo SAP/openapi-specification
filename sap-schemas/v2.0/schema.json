@@ -469,7 +469,14 @@
         },
         "x-sap-operation-kind": {
           "type": "string",
-          "enum": ["TODO"]
+          "enum": [
+            "create-single",
+            "create-multiple",
+            "read-single",
+            "read-collection",
+            "update-single",
+            "update-collection"
+          ]
         }
       }
     },

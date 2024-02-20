@@ -1,0 +1,108 @@
+{
+  "title": "A JSON Schema for SAP Build Extensions",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "definitions": {
+    "x-sap-value-help": {
+      "type": "object",
+      "description": "The Value Help definition",
+      "properties": {
+        "dataSource": {
+          "$ref": "#/definitions/x-sap-value-help-data-source",
+          "description": "The data source description from which the value help will be populated"
+        },
+        "keyProperty": {
+          "type": "string",
+          "description": "The property identifier that will be used as the key for the value help"
+        },
+        "displayOnlyProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The additional property identifiers that will be displayed in the value help for the end user"
+        }
+      },
+      "required": ["dataSource", "keyProperty"]
+    },
+    "x-sap-value-help-data-source": {
+      "type": "object",
+      "description": "The Value Help data source from which the value help will be populated",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/x-sap-value-help-data-source-static"
+        },
+        {
+          "$ref": "#/definitions/x-sap-build-value-help-data-source-action"
+        },
+        {
+          "$ref": "#/definitions/x-sap-build-value-help-data-source-api"
+        }
+      ]
+    },
+    "x-sap-value-help-data-source-static": {
+      "type": "object",
+      "description": "The Value Help static data source from which the value help will be populated",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "static"
+        },
+        "valueSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "description": "The JSON Schema that describes the format of the values that will populate the value help"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "The static list of values that will populate the value help, the values should follow the JSON Schema provided in valueSchema property"
+        }
+      },
+      "required": ["type", "valueSchema", "values"]
+    },
+    "x-sap-build-value-help-data-source-action": {
+      "type": "object",
+      "description": "The SAP Build Value Help Action data source from which the value help will be populated",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "sap.build:action"
+        },
+        "actiongroup": {
+          "type": "string",
+          "description": "The reference to the action group artifact"
+        },
+        "action": {
+          "type": "string",
+          "description": "The reference to the action in the action group"
+        }
+      },
+      "required": ["type", "actiongroup", "action"]
+    },
+    "x-sap-build-value-help-data-source-api": {
+      "type": "object",
+      "description": "The SAP Build Value Help API data source from which the value help will be populated",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "sap.build:api"
+        },
+        "apiPath": {
+          "type": "string",
+          "description": "The path of the API to call"
+        },
+        "valuesPath": {
+          "type": "string",
+          "description": "The json path of the value help values in the response of the API call"
+        },
+        "destination": {
+          "type": "string",
+          "description": "The destination name on which the API will be called"
+        }
+      },
+      "required": ["type", "apiPath"]
+    }
+  }
+}

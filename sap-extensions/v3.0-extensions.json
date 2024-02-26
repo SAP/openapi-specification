@@ -38,7 +38,7 @@
     {
       "paths": ["definitions.Operation.properties"],
       "properties": {
-        "x-sap-operation-kind": {
+        "x-sap-operation-intent": {
           "type": "string",
           "enum": [
             "create-single",
@@ -46,7 +46,8 @@
             "read-single",
             "read-collection",
             "update-single",
-            "update-collection"
+            "update-collection",
+            "action"
           ]
         }
       }

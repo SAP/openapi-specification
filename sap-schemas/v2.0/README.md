@@ -222,7 +222,7 @@ Example:
 
 ## Operation level extensions
 
-### `x-sap-operation-kind`
+### `x-sap-operation-intent`
 
 - Type: `String`
 - Used at: [Operation Object](https://spec.openapis.org/oas/v2.0#operation-object)
@@ -236,6 +236,7 @@ Example:
 | `read-collection` | read a collection, can typically be combined with query options `$search`, `$filter`, `$orderby`, `$top`, and `$skip` | `GET`          |
 | `update-single`   | full or partial update of a single object, may allow "deep" update of a root object and its nested objects            | `PATCH`, `PUT` |
 | `update-multiple` | full or partial update of multiple objects, may allow "deep" update of root and nested objects                        | `PATCH`, `PUT` |
+| `action`          | unspecific action                                                                                                     | `POST`         |
 
 Constraints:
 
@@ -248,29 +249,29 @@ Example:
   "paths": {
     "/products": {
       "get": {
-        "x-sap-operation-kind": "read-collection",
+        "x-sap-operation-intent": "read-collection",
         ...
       },
       "post": {
-        "x-sap-operation-kind": "create-single",
+        "x-sap-operation-intent": "create-single",
         ...
       },
       "patch": {
-        "x-sap-operation-kind": "update-multiple",
+        "x-sap-operation-intent": "update-multiple",
         ...
       }
     },
     "/products/{id}": {
       "get": {
-        "x-sap-operation-kind": "read-single",
+        "x-sap-operation-intent": "read-single",
         ...
       },
       "patch": {
-        "x-sap-operation-kind": "update-single",
+        "x-sap-operation-intent": "update-single",
         ...
       },
       "put": {
-        "x-sap-operation-kind": "update-single",
+        "x-sap-operation-intent": "update-single",
         ...
       },
       "delete": {

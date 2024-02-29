@@ -80,10 +80,17 @@ Constraints:
   - Type: `Object`
   - Schema:
 
-    | Field Name | Type                 | Description                                         |
-    | ---------- | -------------------- | --------------------------------------------------- |
-    | name       | `String`             | **REQUIRED**. Information title                     |
-    | values     | `String` or `Object` | **REQUIRED**. Object type MAY contain any structure |
+    | Field Name | Type                 | Description                                                         |
+    | ---------- | -------------------- | ------------------------------------------------------------------- |
+    | name       | `String`             | **REQUIRED**. Information title                                     |
+    | values     | `String` or `Object` | **REQUIRED**. Object MUST follow the structure like described below |
+
+  - Values MUST be either a primitive string or an object of the following structure:
+
+    | Field Name | Type     | Description                                                           |
+    | ---------- | -------- | --------------------------------------------------------------------- |
+    | text       | `String` | **REQUIRED**. The actual value for a given extension.                 |
+    | format     | `String` | **REQUIRED**. The value format. Possible values: `plain`, `markdown`. |
 
 Example:
 

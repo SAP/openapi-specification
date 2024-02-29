@@ -87,12 +87,10 @@ Constraints:
 
   - Values may be an object of the following structure:
 
-    | Field Name | Type                 | Description                                         |
-    | ---------- | -------------------- | --------------------------------------------------- |
-    | text       | `String`             | **REQUIRED**. The actual value for a given extension. |
-    | key        | `String`             | The value key.                                        |
-    | format        | `String`             | **REQUIRED**. The value format. Possible values: `plain`, `markdown`.|
-
+    | Field Name | Type     | Description                                                           |
+    | ---------- | -------- | --------------------------------------------------------------------- |
+    | text       | `String` | **REQUIRED**. The actual value for a given extension.                 |
+    | format     | `String` | **REQUIRED**. The value format. Possible values: `plain`, `markdown`. |
 
 Example:
 

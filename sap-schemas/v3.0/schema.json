@@ -88,6 +88,7 @@
                     },
                     "format": {
                       "type": "string",
+                      "description": "The value format. Possible values: `plain`, `markdown`.",
                       "default": "plain",
                       "enum": ["plain", "markdown"]
                     }

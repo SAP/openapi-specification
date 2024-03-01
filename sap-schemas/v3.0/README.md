@@ -183,7 +183,7 @@ Example:
 
 - Type: `String`
 - Format: Valid [ORD ID for API Resources](https://sap.github.io/open-resource-discovery/spec-v1/interfaces/document#api-resource_ordid)
-- Used at: [Swagger Object](https://spec.openapis.org/oas/v2.0#swagger-object) (root level)
+- Used at: [OpenAPI Object](https://spec.openapis.org/oas/v3.0.3#openapi-object) (root level)
 - Description: The ORD ID can be used to lookup more high-level metadata via Business Accelerator Hub or Unified Customer Landscape. It is also used when describing Integration Dependencies.
 
 Constraints:

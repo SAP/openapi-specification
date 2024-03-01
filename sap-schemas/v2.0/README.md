@@ -244,7 +244,7 @@ Example:
 
 ```json
 {
-  "x-sap-ord-id": "sap.s4:apiResource:CE_BANK_0003:v3"
+  "x-sap-ord-id": "sap.s4:apiResource:OP_API_CATALOGPROFILE:v1"
 }
 ```
 

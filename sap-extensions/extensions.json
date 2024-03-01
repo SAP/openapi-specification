@@ -139,6 +139,11 @@
           "description": "Indicates the direction of an API",
           "enum": ["inbound", "outbound", "mixed"],
           "default": "inbound"
+        },
+        "x-sap-ord-id": {
+          "type": "string",
+          "description": "ORD ID of the API Resource",
+          "pattern": "^([a-z0-9]+(?:[.][a-z0-9]+)*):(apiResource):([a-zA-Z0-9._\\-]+):(v0|v[1-9][0-9]*)$"
         }
       }
     }

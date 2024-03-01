@@ -179,6 +179,27 @@ Example:
 }
 ```
 
+### `x-sap-ord-id`
+
+- Type: `String`
+- Format: Valid [ORD ID for Event Resources](https://sap.github.io/open-resource-discovery/spec-v1/interfaces/document#event-resource_ordid)
+- Used at: [Swagger Object](https://spec.openapis.org/oas/v2.0#swagger-object) (root level)
+- Description: The ORD ID can be used to lookup more high-level metadata via Business Accelerator Hub or Unified Customer Landscape. It is also used when describing Integration Dependencies to indicate event subscriptions.
+
+Constraints:
+
+- OPTIONAL
+- MUST be a valid [ORD ID](https://sap.github.io/open-resource-discovery/spec-v1/#ord-id) for [Event Resources](https://sap.github.io/open-resource-discovery/spec-v1/interfaces/document#event-resource_ordid)
+  - Regexp: `^([a-z0-9]+(?:[.][a-z0-9]+)*):(eventResource):([a-zA-Z0-9._\-]+):(v0|v[1-9][0-9]*)$`
+
+Example:
+
+```json
+{
+  "x-sap-ord-id": "sap.s4:apiResource:CE_BANK_0003:v3"
+}
+```
+
 ## Schema level extensions
 
 ### `x-sap-odm-entity-name`

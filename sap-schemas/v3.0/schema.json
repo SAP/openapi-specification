@@ -78,7 +78,21 @@
                   "type": "string"
                 },
                 {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["text", "format"],
+                  "properties": {
+                    "text": {
+                      "type": "string",
+                      "description": "The actual value for a given extension."
+                    },
+                    "format": {
+                      "type": "string",
+                      "description": "The value format. Possible values: `plain`, `markdown`.",
+                      "default": "plain",
+                      "enum": ["plain", "markdown"]
+                    }
+                  }
                 }
               ]
             }
@@ -161,6 +175,11 @@
       "description": "Indicates the direction of an API",
       "enum": ["inbound", "outbound", "mixed"],
       "default": "inbound"
+    },
+    "x-sap-ord-id": {
+      "type": "string",
+      "description": "ORD ID of the API Resource",
+      "pattern": "^([a-z0-9]+(?:[.][a-z0-9]+)*):(apiResource):([a-zA-Z0-9._\\-]+):(v0|v[1-9][0-9]*)$"
     },
     "x-sap-extensible": {
       "title": "Extensibility Information",

@@ -80,10 +80,17 @@ Constraints:
   - Type: `Object`
   - Schema:
 
-    | Field Name | Type                 | Description                                         |
-    | ---------- | -------------------- | --------------------------------------------------- |
-    | name       | `String`             | **REQUIRED**. Information title                     |
-    | values     | `String` or `Object` | **REQUIRED**. Object type MAY contain any structure |
+    | Field Name | Type                 | Description                                                         |
+    | ---------- | -------------------- | ------------------------------------------------------------------- |
+    | name       | `String`             | **REQUIRED**. Information title                                     |
+    | values     | `String` or `Object` | **REQUIRED**. Object MUST follow the structure like described below |
+
+  - Values MUST be either a primitive string or an object of the following structure:
+
+    | Field Name | Type     | Description                                                           |
+    | ---------- | -------- | --------------------------------------------------------------------- |
+    | text       | `String` | **REQUIRED**. The actual value for a given extension.                 |
+    | format     | `String` | **REQUIRED**. The value format. Possible values: `plain`, `markdown`. |
 
 Example:
 
@@ -169,6 +176,27 @@ Example:
 ```json
 {
   "x-sap-direction": "outbound"
+}
+```
+
+### `x-sap-ord-id`
+
+- Type: `String`
+- Format: Valid [ORD ID for API Resources](https://sap.github.io/open-resource-discovery/spec-v1/interfaces/document#api-resource_ordid)
+- Used at: [OpenAPI Object](https://spec.openapis.org/oas/v3.0.3#openapi-object) (root level)
+- Description: The ORD ID can be used to lookup more high-level metadata via Business Accelerator Hub or Unified Customer Landscape. It is also used when describing Integration Dependencies.
+
+Constraints:
+
+- OPTIONAL
+- MUST be a valid [ORD ID](https://sap.github.io/open-resource-discovery/spec-v1/#ord-id) for [API Resources](https://sap.github.io/open-resource-discovery/spec-v1/interfaces/document#api-resource_ordid)
+  - Regexp: `^([a-z0-9]+(?:[.][a-z0-9]+)*):(apiResource):([a-zA-Z0-9._\-]+):(v0|v[1-9][0-9]*)$`
+
+Example:
+
+```json
+{
+  "x-sap-ord-id": "sap.s4:apiResource:OP_API_CATALOGPROFILE:v1"
 }
 ```
 

@@ -475,7 +475,8 @@
             "read-single",
             "read-collection",
             "update-single",
-            "update-collection",
+            "upsert-single",
+            "upsert-collection",
             "action"
           ]
         }

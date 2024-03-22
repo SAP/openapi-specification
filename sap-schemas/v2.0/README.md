@@ -263,6 +263,7 @@ Example:
 | `read-single`     | read a single object                                                                                                  | `GET`          |
 | `read-collection` | read a collection, can typically be combined with query options `$search`, `$filter`, `$orderby`, `$top`, and `$skip` | `GET`          |
 | `update-single`   | full or partial update of a single object, may allow "deep" update of a root object and its nested objects            | `PATCH`, `PUT` |
+| `upsert-single`   | full or partial update or insert of a single object, may allow "deep" update of a root object and its nested objects  | `PATCH`, `PUT` |
 | `upsert-multiple` | full or partial update of multiple objects, may allow "deep" update of root and nested objects                        | `PATCH`, `PUT` |
 | `action`          | unspecific action                                                                                                     | `POST`         |
 

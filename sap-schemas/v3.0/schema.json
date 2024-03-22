@@ -1088,9 +1088,9 @@
             "create-multiple",
             "read-single",
             "read-collection",
+            "update-single",
             "upsert-single",
             "upsert-collection",
-            "update-collection",
             "action"
           ]
         }

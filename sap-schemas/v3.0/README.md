@@ -200,6 +200,69 @@ Example:
 }
 ```
 
+## Operation level extensions
+
+### `x-sap-operation-intent`
+
+- Type: `String`
+- Used at: [Operation Object](https://spec.openapis.org/oas/v3.0.3#operation-object)
+- Description: The intent of the operation, a fixed list of values that can be extended on request
+
+| Intent            | Description                                                                                                           | HTTP verbs     |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `create-single`   | insert a single object into a collection                                                                              | `POST`         |
+| `create-multiple` | insert multiple objects into a collection                                                                             | `POST`         |
+| `read-single`     | read a single object                                                                                                  | `GET`          |
+| `read-collection` | read a collection, can typically be combined with query options `$search`, `$filter`, `$orderby`, `$top`, and `$skip` | `GET`          |
+| `update-single`   | full or partial update of a single object, may allow "deep" update of a root object and its nested objects            | `PATCH`, `PUT` |
+| `upsert-single`   | full or partial update or insert of a single object, may allow "deep" update of a root object and its nested objects  | `PATCH`, `PUT` |
+| `upsert-multiple` | full or partial update or insert of multiple objects, may allow "deep" update of root and nested objects              | `PATCH`, `PUT` |
+| `action`          | unspecific action                                                                                                     | `POST`         |
+
+Constraints:
+
+- OPTIONAL
+
+Example:
+
+```json
+{
+  "paths": {
+    "/products": {
+      "get": {
+        "x-sap-operation-intent": "read-collection",
+        ...
+      },
+      "post": {
+        "x-sap-operation-intent": "create-single",
+        ...
+      },
+      "patch": {
+        "x-sap-operation-intent": "upsert-multiple",
+        ...
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "x-sap-operation-intent": "read-single",
+        ...
+      },
+      "patch": {
+        "x-sap-operation-intent": "update-single",
+        ...
+      },
+      "put": {
+        "x-sap-operation-intent": "update-single",
+        ...
+      },
+      "delete": {
+        ...
+      }
+    }
+  }
+}
+```
+
 ## Schema level extensions
 
 ### `x-sap-odm-entity-name`

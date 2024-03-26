@@ -1080,6 +1080,19 @@
           "items": {
             "$ref": "#/definitions/Server"
           }
+        },
+        "x-sap-operation-intent": {
+          "type": "string",
+          "enum": [
+            "create-single",
+            "create-multiple",
+            "read-single",
+            "read-collection",
+            "update-single",
+            "upsert-single",
+            "upsert-collection",
+            "action"
+          ]
         }
       },
       "patternProperties": {

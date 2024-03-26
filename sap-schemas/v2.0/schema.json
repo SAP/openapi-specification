@@ -485,6 +485,19 @@
         },
         "security": {
           "$ref": "#/definitions/security"
+        },
+        "x-sap-operation-intent": {
+          "type": "string",
+          "enum": [
+            "create-single",
+            "create-multiple",
+            "read-single",
+            "read-collection",
+            "update-single",
+            "upsert-single",
+            "upsert-collection",
+            "action"
+          ]
         }
       }
     },

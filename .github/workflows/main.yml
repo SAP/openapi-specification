@@ -26,7 +26,10 @@ jobs:
       run: npm pack
 
     - name: Rename file
-      run: mv sap-openapi-specification-0.14.0.tgz @sap/openapi-specification.tgz
+      run: |
+        pwd
+        ls -la
+        mv sap-openapi-specification-0.14.0.tgz @sap/openapi-specification.tgz
 
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@v2

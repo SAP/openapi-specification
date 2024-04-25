@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/actions-setup-node@v2
+      with:
+        node-version: '18'
+
+    - name: Install NPM dependencies
+      run: npm ci
+
+    - name: Pack the package
+      run: npm run pack
+
+    - name: Rename file
+      run: mv sap-openapi-specification-0.14.0.tgz @sap/openapi-specification.tgz
+
+    - name: Upload binaries to release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GH_TOKEN }}
+        file: "@sap/openapi-specification.tgz"
+        tag: "0.14.0"
+        overwrite: true
+

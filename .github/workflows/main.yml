@@ -23,7 +23,7 @@ jobs:
       run: npm install
 
     - name: Pack the package
-      run: npm run pack
+      run: npm pack
 
     - name: Rename file
       run: mv sap-openapi-specification-0.14.0.tgz @sap/openapi-specification.tgz

@@ -51,7 +51,7 @@
             "action"
           ]
         },
-        "x-sap-deprecatedOperation": {
+        "x-sap-deprecated-operation": {
           "type": "object",
           "required": ["deprecationDate"],
           "properties": {

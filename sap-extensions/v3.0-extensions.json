@@ -50,6 +50,23 @@
             "upsert-collection",
             "action"
           ]
+        },
+        "x-sap-deprecated-operation": {
+          "type": "object",
+          "required": ["deprecationDate"],
+          "properties": {
+            "deprecationDate": {
+              "type": "string",
+              "format": "date",
+              "examples": ["2022-01-01", "2021-11-14"],
+              "description": "Deprecation date of an API operation (when the deprecation process started)."
+            },
+            "successorApi": {
+              "type": "string",
+              "format": "uri-reference",
+              "description": "Provides an URL to a successor API operation."
+            }
+          }
         }
       }
     },

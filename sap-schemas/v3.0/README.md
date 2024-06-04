@@ -263,6 +263,39 @@ Example:
 }
 ```
 
+### `x-sap-deprecated-operation`
+
+- Type: `Object`
+- Used at: [Operation Object](https://spec.openapis.org/oas/v3.0.3#operation-object)
+- Description: Deprecation information of an API operation
+
+Constraints:
+
+- OPTIONAL
+- Schema:
+  |Field Name|Type|Description|
+  |---|---|---|
+  |deprecationDate|`String`|**REQUIRED** if API operation is deprecated. Deprecation date of the API operation (when the deprecation process started).<br><br>The `deprecationDate` must follow the [RFC 3339 full-date](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) format `yyyy-mm-dd`. For example: `2022-01-01`, `2021-11-14`<br><br>Consumers should use this date to know they should stop using this deprecated API operation.|
+  |successorApi|`Uri`|Provides an URL to a successor API operation|
+
+Example:
+
+```json
+{
+  "paths": {
+    "/products": {
+      "get": {
+        "x-sap-deprecated-operation": {
+          "deprecationDate": "2024-06-01",
+          "successorApi": "https://api.sap.com/my-example-api/#successorOperation"
+        },
+        ...
+      },
+    }
+  }
+}
+```
+
 ## Schema level extensions
 
 ### `x-sap-odm-entity-name`

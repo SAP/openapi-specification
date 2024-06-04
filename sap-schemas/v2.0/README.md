@@ -320,6 +320,7 @@ Example:
 Constraints:
 
 - OPTIONAL
+- If present, Operation Object MUST also contain fixed field [`deprecated`](https://spec.openapis.org/oas/v2.0.html#fixed-fields-4) with a value of `true`
 - Schema:
   |Field Name|Type|Description|
   |---|---|---|
@@ -333,6 +334,7 @@ Example:
   "paths": {
     "/products": {
       "get": {
+        "deprecated": true,
         "x-sap-deprecated-operation": {
           "deprecationDate": "2024-06-01",
           "successorApi": "https://api.sap.com/my-example-api/#successorOperation"

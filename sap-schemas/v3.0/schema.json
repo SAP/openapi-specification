@@ -1118,13 +1118,19 @@
               "required": [
                 "deprecationDate",
                 "successorOperationRef"
-              ]
+              ],
+              "not":  {
+                "required": ["successorOperationId"]
+              }
             },
             {
               "required": [
                 "deprecationDate",
                 "successorOperationId"
-              ]
+              ],
+              "not":  {
+                "required": ["successorOperationRef"]
+              }
             }
           ]
         }

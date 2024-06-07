@@ -515,7 +515,6 @@
             },
             "successorOperationId": {
               "type": "string",
-              "format": "uri-reference",
               "description": "The name of an existing, resolvable successor API operation, as defined with a unique `operationId`. This field is mutually exclusive of the `successorOperationRef` field."
             }
           },

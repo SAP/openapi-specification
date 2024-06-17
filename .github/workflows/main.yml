@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repo
@@ -20,22 +20,7 @@ jobs:
         node-version: '18'
 
     - name: Install NPM dependencies
-      run: npm install
+      run: npm ci
 
-    - name: Pack the package
-      run: npm pack
-
-    # - name: Rename file
-    #   run: |
-    #     pwd
-    #     ls -la
-    #     mv sap-openapi-specification-0.14.0.tgz @sap/openapi-specification.tgz
-
-    - name: Upload package to release
-      uses: svenstaro/upload-release-action@v2
-      with:
-        repo_token: ${{ secrets.GH_TOKEN }}
-        file: sap-openapi-specification-0.14.0.tgz
-        tag: "0.14.0"
-        overwrite: true
-
+    - name: Build
+      run: npm run build

@@ -1,9 +1,13 @@
 {
   "name": "@sap/openapi-specification",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "description": "SAP OpenAPI Specification for OpenAPI v2.0 (Swagger 2.0) and OpenAPI 3.0",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
+  "files": [
+    "dist/sap-schemas",
+    "dist/src/index*"
+  ],
   "scripts": {
     "build": "rm -rf dist && tsc",
     "prepublishOnly": "npm run generate && npm run build",
@@ -11,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SAP/openapi-specification"
+    "url": "git+https://github.com/SAP/openapi-specification.git"
   },
   "devDependencies": {
     "@types/lodash": "4.14.189",

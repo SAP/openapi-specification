@@ -311,6 +311,42 @@ Example:
 }
 ```
 
+### `x-sap-deprecated-operation`
+
+- Type: `Object`
+- Used at: [Operation Object](https://spec.openapis.org/oas/v2.0#operation-object)
+- Description: Deprecation information of an API operation
+
+Constraints:
+
+- OPTIONAL
+- If present, Operation Object MUST also contain fixed field [`deprecated`](https://spec.openapis.org/oas/v2.0.html#fixed-fields-4) with a value of `true`
+- Schema:
+  |Field Name|Type|Description|
+  |---|---|---|
+  |deprecationDate|`String`|**REQUIRED** if API operation is deprecated. Deprecation date of the API operation (when the deprecation process started).<br><br>The `deprecationDate` must follow the [RFC 3339 full-date](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) format `yyyy-mm-dd`. For example: `2022-01-01`, `2021-11-14`<br><br>Consumers should use this date to know they should stop using this deprecated API operation.|
+  |successorOperationRef|`Uri`|A relative or absolute URI reference to an successor API operation. This field is mutually exclusive of the `successorOperationId` field, and MUST point to an [Operation Object](https://spec.openapis.org/oas/v2.0#operation-object). Relative `successorOperationRef` values MAY be used to locate an existing [Operation Object](https://spec.openapis.org/oas/v2.0#operation-object) in the OpenAPI definition.|
+  |successorOperationId|`String`|The name of an existing, resolvable successor API operation, as defined with a unique `operationId`. This field is mutually exclusive of the `successorOperationRef` field.|
+
+Example:
+
+```json
+{
+  "paths": {
+    "/products": {
+      "get": {
+        "deprecated": true,
+        "x-sap-deprecated-operation": {
+          "deprecationDate": "2024-06-01",
+          "successorOperationId": "successorOperation"
+        },
+        ...
+      },
+    }
+  }
+}
+```
+
 ## Schema level extensions
 
 ### `x-sap-odm-entity-name`

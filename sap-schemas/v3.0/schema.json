@@ -1093,6 +1093,40 @@
             "upsert-collection",
             "action"
           ]
+        },
+        "x-sap-deprecated-operation": {
+          "type": "object",
+          "properties": {
+            "deprecationDate": {
+              "type": "string",
+              "format": "date",
+              "examples": ["2022-01-01", "2021-11-14"],
+              "description": "Deprecation date of an API operation (when the deprecation process started)."
+            },
+            "successorOperationRef": {
+              "type": "string",
+              "format": "uri-reference",
+              "description": "A relative or absolute URI reference to an successor API operation. This field is mutually exclusive of the `successorOperationId` field, and MUST point to an [Operation Object](https://spec.openapis.org/oas/v3.0.3#operation-object). Relative `successorOperationRef` values MAY be used to locate an existing [Operation Object](https://spec.openapis.org/oas/v3.0.3#operation-object) in the OpenAPI definition."
+            },
+            "successorOperationId": {
+              "type": "string",
+              "description": "The name of an existing, resolvable successor API operation, as defined with a unique `operationId`. This field is mutually exclusive of the `successorOperationRef` field."
+            }
+          },
+          "oneOf": [
+            {
+              "required": ["deprecationDate", "successorOperationRef"],
+              "not": {
+                "required": ["successorOperationId"]
+              }
+            },
+            {
+              "required": ["deprecationDate", "successorOperationId"],
+              "not": {
+                "required": ["successorOperationRef"]
+              }
+            }
+          ]
         }
       },
       "patternProperties": {

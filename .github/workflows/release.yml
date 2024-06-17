@@ -7,7 +7,7 @@ jobs:
       contents: read
       id-token: write
     runs-on: ubuntu-latest
-    environment: <npmjs:packageNameWithScope>
+    environment: npmjs:@sap/openapi-specification
     steps:
       - uses: actions/checkout@v4
 

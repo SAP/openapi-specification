@@ -32,7 +32,50 @@
           "type": "boolean",
           "default": false,
           "description": "Indicates if the marked object represents a root entity. A root entity is the root of a business object. It has a distinct existence. Examples are real-world objects, like a workforce person or a piece of equipment or other more abstract real-world concepts, like a contract or an order. It has an independent lifetime / identity and is globally and uniquely addressable (via the unique identifier provided by the property referenced in x-sap-odm-oid field)."
-        }
+        },
+        "x-sap-dpp-entitySemantics": {
+          "type": "string",
+          "description": "Primary meaning of the personal data in the annotated entity set. Entities annotated with x-sap-dpp-entitySemantics are synonymous to x-sap-dpp-isPotentiallyPersonal.",
+          "enum": [
+            "sap:DataSubject",
+            "sap:DataSubjectDetails",
+            "sap:Other"
+          ]
+        },
+        "x-sap-dpp-dataSubjectRole": {
+          "type": "string",
+          "description": "Role of the data subjects in this set (e.g. employee, customer). Values are application-specific. Can be a static value or a Path expression If the role varies per entity"
+        },
+        "x-sap-dpp-dataSubjectRoleDescription": {
+          "type": "string",
+          "description": "Language-dependent description of the role of the data subjects in this set (e.g. employee, customer). Values are application-specific. Can be a static value or a Path expression If the role varies per entity"
+        },
+        "x-sap-dpp-fieldSemantics": {
+          "type": "string",
+          "description": "Primary meaning of the personal data contained in the annotated property. Changes to values of annotated properties are tracked in the audit log. Use this annotation also on fields that are already marked as contact or address data. Properties annotated with x-sap-dpp-fieldSemantics need not be additionally annotated with x-sap-dpp-isPotentiallyPersonal.",
+          "enum": [
+            "sap:DataSubjectID",
+            "sap:ConsentID",
+            "sap:PurposeID",
+            "sap:ContractRelatedID",
+            "sap:LegalEntityID",
+            "sap:DataControllerID",
+            "sap:UserID",
+            "sap:EndOfBusinessDate",
+            "sap:BlockingDate",
+            "sap:EndOfRetentionDate"
+          ]
+        },
+        "x-sap-dpp-isPotentiallyPersonal": {
+          "type": "boolean",
+          "default": true,
+          "description": "Property contains potentially personal data. Properties annotated with x-sap-dpp-fieldSemantics need not be additionally annotated with this extension."
+        },
+        "x-sap-dpp-isPotentiallySensitive": {
+          "type": "boolean",
+          "default": true,
+          "description": "Property contains potentially sensitive personal data"
+        }        
       }
     },
     {

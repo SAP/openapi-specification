@@ -44,11 +44,11 @@
         },
         "x-sap-dpp-dataSubjectRole": {
           "type": "string",
-          "description": "Role of the data subjects in this set (e.g. employee, customer). Values are application-specific. Can be a static value or a Path expression If the role varies per entity"
+          "description": "Role of the data subjects in this set (e.g. employee, customer). Values are application-specific."
         },
         "x-sap-dpp-dataSubjectRoleDescription": {
           "type": "string",
-          "description": "Language-dependent description of the role of the data subjects in this set (e.g. employee, customer). Values are application-specific. Can be a static value or a Path expression If the role varies per entity"
+          "description": "Language-dependent description of the role of the data subjects in this set (e.g. employee, customer). Values are application-specific."
         },
         "x-sap-dpp-fieldSemantics": {
           "type": "string",

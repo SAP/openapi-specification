@@ -738,7 +738,7 @@
         },
         "x-sap-dpp-fieldSemantics": {
           "type": "string",
-          "description": "Primary meaning of the personal data contained in the annotated property. Changes to values of annotated properties are tracked in the audit log. Use this annotation also on fields that are already marked as contact or address data.Properties annotated with x-sap-dpp-fieldSemantics need not be additionally annotated with x-sap-dpp-isPotentiallyPersonal.",
+          "description": "Primary meaning of the personal data contained in the annotated property. Changes to values of annotated properties are tracked in the audit log. Use this annotation also on fields that are already marked as contact or address data. Properties annotated with x-sap-dpp-fieldSemantics need not be additionally annotated with x-sap-dpp-isPotentiallyPersonal.",
           "enum": [
             "sap:DataSubjectID",
             "sap:ConsentID",

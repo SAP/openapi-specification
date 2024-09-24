@@ -515,7 +515,7 @@ Constraints:
 
 - Type: `String`
 - Used at: [OpenAPI Schema Object](https://spec.openapis.org/oas/v3.0.3#schemaObject)
-- Description: Role of the data subjects in this set (e.g. employee, customer). Values are application-specific. Can be a static value or a Path expression If the role varies per entity
+- Description: Role of the data subjects in this set (e.g. employee, customer). Values are application-specific.
 
 Constraints:
 
@@ -525,7 +525,7 @@ Constraints:
 
 - Type: `String`
 - Used at: [OpenAPI Schema Object](https://spec.openapis.org/oas/v3.0.3#schemaObject)
-- Description: Language-dependent description of the role of the data subjects in this set (e.g. employee, customer). Values are application-specific. Can be a static value or a Path expression If the role varies per entity
+- Description: Language-dependent description of the role of the data subjects in this set (e.g. employee, customer). Values are application-specific.
 
 Constraints:
 

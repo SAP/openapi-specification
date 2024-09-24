@@ -752,7 +752,7 @@
         "x-sap-dpp-isPotentiallyPersonal": {
           "type": "boolean",
           "default": true,
-          "description": "Property contains potentially personal data.Properties annotated with x-sap-dpp-fieldSemantics need not be additionally annotated with this extension."
+          "description": "Property contains potentially personal data. Properties annotated with x-sap-dpp-fieldSemantics need not be additionally annotated with this extension."
         },
         "x-sap-dpp-isPotentiallySensitive": {
           "type": "boolean",

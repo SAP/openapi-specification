@@ -563,7 +563,7 @@ Constraints:
 - OPTIONAL
 - Default: `true`
 
-### `x-sap-dpp-is-potentially-sensitive`
+### `x-sap-dpp-ispotentiallysensitive`
 
 - Type: `Boolean`
 - Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)

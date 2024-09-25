@@ -505,7 +505,7 @@ Constraints:
   - `sap:DataSubjectDetails`
   - `sap:Other`
 - Used at: [OpenAPI Schema Object](https://spec.openapis.org/oas/v3.0.3#schemaObject)
-- Description: Primary meaning of the personal data in the annotated entity set. Entities annotated with  `x-sap-dpp-entity-semantics` are synonymous to `x-sap-dpp-ispotentiallypersonal`.
+- Description: Primary meaning of the personal data in the annotated entity set. Entities annotated with  `x-sap-dpp-entitysemantics` are synonymous to `x-sap-dpp-ispotentiallypersonal`.
 
 Constraints:
 

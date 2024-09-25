@@ -497,7 +497,7 @@ Constraints:
 }
 ```
 
-### `x-sap-dpp-entity-semantics`
+### `x-sap-dpp-entitysemantics`
 
 - Type: `String`
 - Allowed Values:
@@ -505,13 +505,13 @@ Constraints:
   - `sap:DataSubjectDetails`
   - `sap:Other`
 - Used at: [OpenAPI Schema Object](https://spec.openapis.org/oas/v3.0.3#schemaObject)
-- Description: Primary meaning of the personal data in the annotated entity set. Entities annotated with  `x-sap-dpp-entity-semantics` are synonymous to `x-sap-dpp-is-potentially-personal`.
+- Description: Primary meaning of the personal data in the annotated entity set. Entities annotated with  `x-sap-dpp-entity-semantics` are synonymous to `x-sap-dpp-ispotentiallypersonal`.
 
 Constraints:
 
 - OPTIONAL
 
-### `x-sap-dpp-data-subject-role`
+### `x-sap-dpp-datasubjectrole`
 
 - Type: `String`
 - Used at: [OpenAPI Schema Object](https://spec.openapis.org/oas/v3.0.3#schemaObject)
@@ -521,7 +521,7 @@ Constraints:
 
 - OPTIONAL
 
-### `x-sap-dpp-data-subject-role-description`
+### `x-sap-dpp-datasubjectroledescription`
 
 - Type: `String`
 - Used at: [OpenAPI Schema Object](https://spec.openapis.org/oas/v3.0.3#schemaObject)
@@ -531,11 +531,11 @@ Constraints:
 
 - OPTIONAL
 
-### `x-sap-dpp-field-semantics`
+### `x-sap-dpp-fieldsemantics`
 
 - Type: `String`
 - Used at: [OpenAPI Schema Object](https://spec.openapis.org/oas/v3.0.3#schemaObject)
-- Description: Primary meaning of the personal data contained in the annotated property. Changes to values of annotated properties are tracked in the audit log. Use this annotation also on fields that are already marked as contact or address data. Properties annotated with `x-sap-dpp-field-semantics` need not be additionally annotated with `x-sap-dpp-is-potentially-personal`.
+- Description: Primary meaning of the personal data contained in the annotated property. Changes to values of annotated properties are tracked in the audit log. Use this annotation also on fields that are already marked as contact or address data. Properties annotated with `x-sap-dpp-fieldsemantics` need not be additionally annotated with `x-sap-dpp-ispotentiallypersonal`.
 - Allowed Values:
   - `sap:DataSubjectID`
   - `sap:ConsentID`
@@ -552,11 +552,11 @@ Constraints:
 
 - OPTIONAL
 
-### `x-sap-dpp-is-potentially-personal`
+### `x-sap-dpp-ispotentiallypersonal`
 
 - Type: `Boolean`
 - Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
-- Description: Property contains potentially personal data. Properties annotated with `x-sap-dpp-field-semantics` need not be additionally annotated with this extension.
+- Description: Property contains potentially personal data. Properties annotated with `x-sap-dpp-fieldsemantics` need not be additionally annotated with this extension.
 
 Constraints:
 

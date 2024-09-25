@@ -9,26 +9,26 @@
         "definitions.Schema.properties"
       ],
       "properties": {
-        "x-sap-dpp-entitysemantics": {
+        "x-sap-dpp-entity-semantics": {
           "type": "string",
-          "description": "Primary meaning of the personal data in the annotated entity set. Entities annotated with x-sap-dpp-entitysemantics are synonymous to x-sap-dpp-ispotentiallypersonal.",
+          "description": "Primary meaning of the personal data in the annotated entity set. Entities annotated with x-sap-dpp-entity-semantics are synonymous to x-sap-dpp-is-potentially-personal.",
           "enum": [
             "sap:DataSubject",
             "sap:DataSubjectDetails",
             "sap:Other"
           ]
         },
-        "x-sap-dpp-datasubjectrole": {
+        "x-sap-dpp-data-subject-role": {
           "type": "string",
           "description": "Role of the data subjects in this set (e.g. employee, customer). Values are application-specific."
         },
-        "x-sap-dpp-datasubjectroledescription": {
+        "x-sap-dpp-data-subject-role-description": {
           "type": "string",
           "description": "Language-dependent description of the role of the data subjects in this set (e.g. employee, customer). Values are application-specific."
         },
-        "x-sap-dpp-fieldsemantics": {
+        "x-sap-dpp-field-semantics": {
           "type": "string",
-          "description": "Primary meaning of the personal data contained in the annotated property. Changes to values of annotated properties are tracked in the audit log. Use this annotation also on fields that are already marked as contact or address data. Properties annotated with x-sap-dpp-fieldsemantics need not be additionally annotated with x-sap-dpp-ispotentiallypersonal.",
+          "description": "Primary meaning of the personal data contained in the annotated property. Changes to values of annotated properties are tracked in the audit log. Use this annotation also on fields that are already marked as contact or address data. Properties annotated with x-sap-dpp-field-semantics need not be additionally annotated with x-sap-dpp-is-potentially-personal.",
           "enum": [
             "sap:DataSubjectID",
             "sap:ConsentID",
@@ -42,12 +42,12 @@
             "sap:EndOfRetentionDate"
           ]
         },
-        "x-sap-dpp-ispotentiallypersonal": {
+        "x-sap-dpp-is-potentially-personal": {
           "type": "boolean",
           "default": true,
-          "description": "Property contains potentially personal data. Properties annotated with x-sap-dpp-fieldsemantics need not be additionally annotated with this extension."
+          "description": "Property contains potentially personal data. Properties annotated with x-sap-dpp-field-semantics need not be additionally annotated with this extension."
         },
-        "x-sap-dpp-ispotentiallysensitive": {
+        "x-sap-dpp-is-potentially-sensitive": {
           "type": "boolean",
           "default": true,
           "description": "Property contains potentially sensitive personal data"

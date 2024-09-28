@@ -3,11 +3,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "The description of OpenAPI v3.0.x documents, as defined by https://spec.openapis.org/oas/v3.0.3",
   "type": "object",
-  "required": [
-    "openapi",
-    "info",
-    "paths"
-  ],
+  "required": ["openapi", "info", "paths"],
   "properties": {
     "openapi": {
       "type": "string",
@@ -47,11 +43,7 @@
     "x-sap-compliance-level": {
       "type": "string",
       "description": "The compliance level that this API resource is expected to be compliant with. This corresponds to the [ORD policy level](https://pages.github.tools.sap/CentralEngineering/open-resource-discovery-specification/#/v1/generated/Document?id=package_policylevel) concept.",
-      "enum": [
-        "sap:base:v1",
-        "sap:core:v1",
-        "sap:core:v2"
-      ]
+      "enum": ["sap:base:v1", "sap:core:v1", "sap:core:v2"]
     },
     "x-sap-shortText": {
       "type": "string",
@@ -64,12 +56,7 @@
     "x-sap-api-type": {
       "type": "string",
       "description": "Type of API",
-      "enum": [
-        "REST",
-        "SOAP",
-        "ODATA",
-        "ODATAV4"
-      ],
+      "enum": ["REST", "SOAP", "ODATA", "ODATAV4"],
       "example": "REST"
     },
     "x-sap-ext-overview": {
@@ -77,10 +64,7 @@
       "description": "To provide stakeholder-specific information",
       "items": {
         "type": "object",
-        "required": [
-          "name",
-          "values"
-        ],
+        "required": ["name", "values"],
         "additionalProperties": false,
         "properties": {
           "name": {
@@ -96,10 +80,7 @@
                 {
                   "type": "object",
                   "additionalProperties": false,
-                  "required": [
-                    "text",
-                    "format"
-                  ],
+                  "required": ["text", "format"],
                   "properties": {
                     "text": {
                       "type": "string",
@@ -109,10 +90,7 @@
                       "type": "string",
                       "description": "The value format. Possible values: `plain`, `markdown`.",
                       "default": "plain",
-                      "enum": [
-                        "plain",
-                        "markdown"
-                      ]
+                      "enum": ["plain", "markdown"]
                     }
                   }
                 }
@@ -125,9 +103,7 @@
     "x-sap-stateInfo": {
       "type": "object",
       "description": "API Status",
-      "required": [
-        "state"
-      ],
+      "required": ["state"],
       "properties": {
         "state": {
           "oneOf": [
@@ -152,31 +128,20 @@
               "description": "Indicates API status."
             }
           ],
-          "examples": [
-            "Beta",
-            "Active",
-            "Deprecated",
-            "Decommissioned"
-          ]
+          "examples": ["Beta", "Active", "Deprecated", "Decommissioned"]
         },
         "deprecationDate": {
           "oneOf": [
             {
               "type": "string",
               "format": "date",
-              "examples": [
-                "2022-01-01",
-                "2021-11-14"
-              ],
+              "examples": ["2022-01-01", "2021-11-14"],
               "description": "Deprecation date of an API (when the deprecation process started)."
             },
             {
               "type": "string",
               "pattern": "^[0-9]{2} [A-Za-z]{3} [0-9]{4}$",
-              "examples": [
-                "01 Jan 2022",
-                "14 Nov 2021"
-              ],
+              "examples": ["01 Jan 2022", "14 Nov 2021"],
               "description": "Deprecation date of an API (when the deprecation process started)."
             }
           ]
@@ -186,19 +151,13 @@
             {
               "type": "string",
               "format": "date",
-              "examples": [
-                "2022-01-01",
-                "2021-11-14"
-              ],
+              "examples": ["2022-01-01", "2021-11-14"],
               "description": "Decommission date of an API (sunset data, when it will not be available anymore)."
             },
             {
               "type": "string",
               "pattern": "^[0-9]{2} [A-Za-z]{3} [0-9]{4}$",
-              "examples": [
-                "01 Jan 2022",
-                "14 Nov 2021"
-              ],
+              "examples": ["01 Jan 2022", "14 Nov 2021"],
               "description": "Decommission date of an API (sunset data, when it will not be available anymore)."
             }
           ]
@@ -214,11 +173,7 @@
     "x-sap-direction": {
       "type": "string",
       "description": "Indicates the direction of an API",
-      "enum": [
-        "inbound",
-        "outbound",
-        "mixed"
-      ],
+      "enum": ["inbound", "outbound", "mixed"],
       "default": "inbound"
     },
     "x-sap-ord-id": {
@@ -235,11 +190,7 @@
           "properties": {
             "supported": {
               "type": "string",
-              "enum": [
-                "no",
-                "manual",
-                "automatic"
-              ],
+              "enum": ["no", "manual", "automatic"],
               "description": "This property defines whether the resource is extensible.\n\n**Not extensible** means that the data model of the resource (i.e. API or event) cannot be extended with custom fields.\n**Manually extensible** means that in addition to defining a custom field, manual activities to include the field in the data model of the resource (i.e. API or event) are required. E.g. using a specific mapping tool or by selecting the resource in the data model extension tool.\n**Automatically extensible** means that after defining a custom field in the local domain model, the resource (i.e. API or event) is automatically extended as part of the default extension field definition."
             },
             "description": {
@@ -251,20 +202,14 @@
               ]
             }
           },
-          "required": [
-            "supported"
-          ]
+          "required": ["supported"]
         },
         {
           "description": "Contains information about the extensibility of this resource.\n\nIf applicable, a description and further resources about extending this resource are provided.\nThis property is a backport from the ORD extensibility property.",
           "properties": {
             "type": {
               "type": "string",
-              "enum": [
-                "no",
-                "manual",
-                "automatic"
-              ],
+              "enum": ["no", "manual", "automatic"],
               "description": "This property defines whether the resource is extensible.\n\n**Not extensible** means that the data model of the resource (i.e. API or event) cannot be extended with custom fields.\n**Manually extensible** means that in addition to defining a custom field, manual activities to include the field in the data model of the resource (i.e. API or event) are required. E.g. using a specific mapping tool or by selecting the resource in the data model extension tool.\n**Automatically extensible** means that after defining a custom field in the local domain model, the resource (i.e. API or event) is automatically extended as part of the default extension field definition."
             },
             "description": {
@@ -276,9 +221,7 @@
               ]
             }
           },
-          "required": [
-            "type"
-          ]
+          "required": ["type"]
         }
       ]
     }
@@ -290,9 +233,7 @@
   "definitions": {
     "Reference": {
       "type": "object",
-      "required": [
-        "$ref"
-      ],
+      "required": ["$ref"],
       "patternProperties": {
         "^\\$ref$": {
           "type": "string",
@@ -302,10 +243,7 @@
     },
     "Info": {
       "type": "object",
-      "required": [
-        "title",
-        "version"
-      ],
+      "required": ["title", "version"],
       "properties": {
         "title": {
           "type": "string"
@@ -354,9 +292,7 @@
     },
     "License": {
       "type": "object",
-      "required": [
-        "name"
-      ],
+      "required": ["name"],
       "properties": {
         "name": {
           "type": "string"
@@ -373,9 +309,7 @@
     },
     "Server": {
       "type": "object",
-      "required": [
-        "url"
-      ],
+      "required": ["url"],
       "properties": {
         "url": {
           "type": "string"
@@ -397,9 +331,7 @@
     },
     "ServerVariable": {
       "type": "object",
-      "required": [
-        "default"
-      ],
+      "required": ["default"],
       "properties": {
         "enum": {
           "type": "array",
@@ -639,14 +571,7 @@
         },
         "type": {
           "type": "string",
-          "enum": [
-            "array",
-            "boolean",
-            "integer",
-            "number",
-            "object",
-            "string"
-          ]
+          "enum": ["array", "boolean", "integer", "number", "object", "string"]
         },
         "not": {
           "oneOf": [
@@ -767,6 +692,45 @@
         "xml": {
           "$ref": "#/definitions/XML"
         },
+        "x-sap-dpp-entity-semantics": {
+          "type": "string",
+          "description": "Primary meaning of the personal data in the annotated entity set. Entities annotated with x-sap-dpp-entity-semantics are synonymous to x-sap-dpp-is-potentially-personal.",
+          "enum": ["sap:DataSubject", "sap:DataSubjectDetails", "sap:Other"]
+        },
+        "x-sap-dpp-data-subject-role": {
+          "type": "string",
+          "description": "Role of the data subjects in this set (e.g. employee, customer). Values are application-specific."
+        },
+        "x-sap-dpp-data-subject-role-description": {
+          "type": "string",
+          "description": "Language-dependent description of the role of the data subjects in this set (e.g. employee, customer). Values are application-specific."
+        },
+        "x-sap-dpp-field-semantics": {
+          "type": "string",
+          "description": "Primary meaning of the personal data contained in the annotated property. Changes to values of annotated properties are tracked in the audit log. Use this annotation also on fields that are already marked as contact or address data. Properties annotated with x-sap-dpp-field-semantics need not be additionally annotated with x-sap-dpp-is-potentially-personal.",
+          "enum": [
+            "sap:DataSubjectID",
+            "sap:ConsentID",
+            "sap:PurposeID",
+            "sap:ContractRelatedID",
+            "sap:LegalEntityID",
+            "sap:DataControllerID",
+            "sap:UserID",
+            "sap:EndOfBusinessDate",
+            "sap:BlockingDate",
+            "sap:EndOfRetentionDate"
+          ]
+        },
+        "x-sap-dpp-is-potentially-personal": {
+          "type": "boolean",
+          "default": true,
+          "description": "Property contains potentially personal data. Properties annotated with x-sap-dpp-field-semantics need not be additionally annotated with this extension."
+        },
+        "x-sap-dpp-is-potentially-sensitive": {
+          "type": "boolean",
+          "default": true,
+          "description": "Property contains potentially sensitive personal data"
+        },
         "x-sap-odm-entity-name": {
           "type": "string",
           "description": "Name of an ODM entity as a general concept, not a concrete version thereof. The annotated schema is one of many representations of the ODM entity. Annotating the schema with this term helps consumers find APIs that process or expose the same entity."
@@ -793,46 +757,6 @@
           "type": "boolean",
           "default": false,
           "description": "Indicates if the marked object represents a root entity. A root entity is the root of a business object. It has a distinct existence. Examples are real-world objects, like a workforce person or a piece of equipment or other more abstract real-world concepts, like a contract or an order. It has an independent lifetime / identity and is globally and uniquely addressable (via the unique identifier provided by the property referenced in x-sap-odm-oid field)."
-        },
-        "x-sap-dpp-entity-semantics": {
-          "type": "string",
-          "description": "Primary meaning of the entities in the annotated entity set. Entities annotated with x-sap-dpp-entity-semantics are synonymous to x-sap-dpp-is-potentially-personal.",
-          "enum": [
-            "sap:DataSubject",
-            "sap:DataSubjectDetails",
-            "sap:Other"
-          ]
-        },
-        "x-sap-dpp-data-subject-role": {
-          "type": "string",
-          "description": "Role of the data subjects in this set (e.g. employee, customer). Values are application-specific."
-        },
-        "x-sap-dpp-data-subject-role-description": {
-          "type": "string",
-          "description": "Language-dependent description of the role of the data subjects in this set (e.g. employee, customer). Values are application-specific."
-        },
-        "x-sap-dpp-field-semantics": {
-          "type": "string",
-          "description": "Primary meaning of the personal data contained in the annotated property. Changes to values of annotated properties are tracked in the audit log. Use this annotation also on fields that are already marked as contact or address data. Properties annotated with x-sap-dpp-field-semantics need not be additionally annotated with x-sap-dpp-is-potentially-personal.",
-          "enum": [
-            "sap:DataSubjectID",
-            "sap:ConsentID",
-            "sap:PurposeID",
-            "sap:ContractRelatedID",
-            "sap:LegalEntityID",
-            "sap:UserID",
-            "sap:EndOfBusinessDate"
-          ]
-        },
-        "x-sap-dpp-is-potentially-personal": {
-          "type": "boolean",
-          "default": true,
-          "description": "Property contains potentially personal data. Properties annotated with x-sap-dpp-field-semantics need not be additionally annotated with this extension."
-        },
-        "x-sap-dpp-is-potentially-sensitive": {
-          "type": "boolean",
-          "default": true,
-          "description": "Property contains potentially sensitive personal data"
         }
       },
       "patternProperties": {
@@ -842,9 +766,7 @@
     },
     "Discriminator": {
       "type": "object",
-      "required": [
-        "propertyName"
-      ],
+      "required": ["propertyName"],
       "properties": {
         "propertyName": {
           "type": "string"
@@ -886,9 +808,7 @@
     },
     "Response": {
       "type": "object",
-      "required": [
-        "description"
-      ],
+      "required": ["description"],
       "properties": {
         "description": {
           "type": "string"
@@ -1015,9 +935,7 @@
         },
         "style": {
           "type": "string",
-          "enum": [
-            "simple"
-          ],
+          "enum": ["simple"],
           "default": "simple"
         },
         "explode": {
@@ -1126,9 +1044,7 @@
     },
     "Operation": {
       "type": "object",
-      "required": [
-        "responses"
-      ],
+      "required": ["responses"],
       "properties": {
         "tags": {
           "type": "array",
@@ -1223,10 +1139,7 @@
             "deprecationDate": {
               "type": "string",
               "format": "date",
-              "examples": [
-                "2022-01-01",
-                "2021-11-14"
-              ],
+              "examples": ["2022-01-01", "2021-11-14"],
               "description": "Deprecation date of an API operation (when the deprecation process started)."
             },
             "successorOperationRef": {
@@ -1241,25 +1154,15 @@
           },
           "oneOf": [
             {
-              "required": [
-                "deprecationDate",
-                "successorOperationRef"
-              ],
+              "required": ["deprecationDate", "successorOperationRef"],
               "not": {
-                "required": [
-                  "successorOperationId"
-                ]
+                "required": ["successorOperationId"]
               }
             },
             {
-              "required": [
-                "deprecationDate",
-                "successorOperationId"
-              ],
+              "required": ["deprecationDate", "successorOperationId"],
               "not": {
-                "required": [
-                  "successorOperationRef"
-                ]
+                "required": ["successorOperationRef"]
               }
             }
           ]
@@ -1311,9 +1214,7 @@
     },
     "Tag": {
       "type": "object",
-      "required": [
-        "name"
-      ],
+      "required": ["name"],
       "properties": {
         "name": {
           "type": "string"
@@ -1332,9 +1233,7 @@
     },
     "ExternalDocumentation": {
       "type": "object",
-      "required": [
-        "url"
-      ],
+      "required": ["url"],
       "properties": {
         "description": {
           "type": "string"
@@ -1352,65 +1251,45 @@
     "ExampleXORExamples": {
       "description": "Example and examples are mutually exclusive",
       "not": {
-        "required": [
-          "example",
-          "examples"
-        ]
+        "required": ["example", "examples"]
       }
     },
     "SchemaXORContent": {
       "description": "Schema and content are mutually exclusive, at least one is required",
       "not": {
-        "required": [
-          "schema",
-          "content"
-        ]
+        "required": ["schema", "content"]
       },
       "oneOf": [
         {
-          "required": [
-            "schema"
-          ]
+          "required": ["schema"]
         },
         {
-          "required": [
-            "content"
-          ],
+          "required": ["content"],
           "description": "Some properties are not allowed if content is present",
           "allOf": [
             {
               "not": {
-                "required": [
-                  "style"
-                ]
+                "required": ["style"]
               }
             },
             {
               "not": {
-                "required": [
-                  "explode"
-                ]
+                "required": ["explode"]
               }
             },
             {
               "not": {
-                "required": [
-                  "allowReserved"
-                ]
+                "required": ["allowReserved"]
               }
             },
             {
               "not": {
-                "required": [
-                  "example"
-                ]
+                "required": ["example"]
               }
             },
             {
               "not": {
-                "required": [
-                  "examples"
-                ]
+                "required": ["examples"]
               }
             }
           ]
@@ -1488,10 +1367,7 @@
         "^x-": {}
       },
       "additionalProperties": false,
-      "required": [
-        "name",
-        "in"
-      ],
+      "required": ["name", "in"],
       "allOf": [
         {
           "$ref": "#/definitions/ExampleXORExamples"
@@ -1509,27 +1385,17 @@
       "oneOf": [
         {
           "description": "Parameter in path",
-          "required": [
-            "required"
-          ],
+          "required": ["required"],
           "properties": {
             "in": {
-              "enum": [
-                "path"
-              ]
+              "enum": ["path"]
             },
             "style": {
-              "enum": [
-                "matrix",
-                "label",
-                "simple"
-              ],
+              "enum": ["matrix", "label", "simple"],
               "default": "simple"
             },
             "required": {
-              "enum": [
-                true
-              ]
+              "enum": [true]
             }
           }
         },
@@ -1537,17 +1403,10 @@
           "description": "Parameter in query",
           "properties": {
             "in": {
-              "enum": [
-                "query"
-              ]
+              "enum": ["query"]
             },
             "style": {
-              "enum": [
-                "form",
-                "spaceDelimited",
-                "pipeDelimited",
-                "deepObject"
-              ],
+              "enum": ["form", "spaceDelimited", "pipeDelimited", "deepObject"],
               "default": "form"
             }
           }
@@ -1556,14 +1415,10 @@
           "description": "Parameter in header",
           "properties": {
             "in": {
-              "enum": [
-                "header"
-              ]
+              "enum": ["header"]
             },
             "style": {
-              "enum": [
-                "simple"
-              ],
+              "enum": ["simple"],
               "default": "simple"
             }
           }
@@ -1572,14 +1427,10 @@
           "description": "Parameter in cookie",
           "properties": {
             "in": {
-              "enum": [
-                "cookie"
-              ]
+              "enum": ["cookie"]
             },
             "style": {
-              "enum": [
-                "form"
-              ],
+              "enum": ["form"],
               "default": "form"
             }
           }
@@ -1588,9 +1439,7 @@
     },
     "RequestBody": {
       "type": "object",
-      "required": [
-        "content"
-      ],
+      "required": ["content"],
       "properties": {
         "description": {
           "type": "string"
@@ -1629,28 +1478,18 @@
     },
     "APIKeySecurityScheme": {
       "type": "object",
-      "required": [
-        "type",
-        "name",
-        "in"
-      ],
+      "required": ["type", "name", "in"],
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "apiKey"
-          ]
+          "enum": ["apiKey"]
         },
         "name": {
           "type": "string"
         },
         "in": {
           "type": "string",
-          "enum": [
-            "header",
-            "query",
-            "cookie"
-          ]
+          "enum": ["header", "query", "cookie"]
         },
         "description": {
           "type": "string"
@@ -1663,10 +1502,7 @@
     },
     "HTTPSecurityScheme": {
       "type": "object",
-      "required": [
-        "scheme",
-        "type"
-      ],
+      "required": ["scheme", "type"],
       "properties": {
         "scheme": {
           "type": "string"
@@ -1679,9 +1515,7 @@
         },
         "type": {
           "type": "string",
-          "enum": [
-            "http"
-          ]
+          "enum": ["http"]
         }
       },
       "patternProperties": {
@@ -1701,9 +1535,7 @@
         {
           "description": "Non Bearer",
           "not": {
-            "required": [
-              "bearerFormat"
-            ]
+            "required": ["bearerFormat"]
           },
           "properties": {
             "scheme": {
@@ -1718,16 +1550,11 @@
     },
     "OAuth2SecurityScheme": {
       "type": "object",
-      "required": [
-        "type",
-        "flows"
-      ],
+      "required": ["type", "flows"],
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "oauth2"
-          ]
+          "enum": ["oauth2"]
         },
         "flows": {
           "$ref": "#/definitions/OAuthFlows"
@@ -1743,16 +1570,11 @@
     },
     "OpenIdConnectSecurityScheme": {
       "type": "object",
-      "required": [
-        "type",
-        "openIdConnectUrl"
-      ],
+      "required": ["type", "openIdConnectUrl"],
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "openIdConnect"
-          ]
+          "enum": ["openIdConnect"]
         },
         "openIdConnectUrl": {
           "type": "string",
@@ -1790,10 +1612,7 @@
     },
     "ImplicitOAuthFlow": {
       "type": "object",
-      "required": [
-        "authorizationUrl",
-        "scopes"
-      ],
+      "required": ["authorizationUrl", "scopes"],
       "properties": {
         "authorizationUrl": {
           "type": "string"
@@ -1815,10 +1634,7 @@
     },
     "PasswordOAuthFlow": {
       "type": "object",
-      "required": [
-        "tokenUrl",
-        "scopes"
-      ],
+      "required": ["tokenUrl", "scopes"],
       "properties": {
         "tokenUrl": {
           "type": "string"
@@ -1840,10 +1656,7 @@
     },
     "ClientCredentialsFlow": {
       "type": "object",
-      "required": [
-        "tokenUrl",
-        "scopes"
-      ],
+      "required": ["tokenUrl", "scopes"],
       "properties": {
         "tokenUrl": {
           "type": "string"
@@ -1865,11 +1678,7 @@
     },
     "AuthorizationCodeOAuthFlow": {
       "type": "object",
-      "required": [
-        "authorizationUrl",
-        "tokenUrl",
-        "scopes"
-      ],
+      "required": ["authorizationUrl", "tokenUrl", "scopes"],
       "properties": {
         "authorizationUrl": {
           "type": "string"
@@ -1920,10 +1729,7 @@
       "additionalProperties": false,
       "not": {
         "description": "Operation Id and Operation Ref are mutually exclusive",
-        "required": [
-          "operationId",
-          "operationRef"
-        ]
+        "required": ["operationId", "operationRef"]
       }
     },
     "Callback": {
@@ -1956,12 +1762,7 @@
         },
         "style": {
           "type": "string",
-          "enum": [
-            "form",
-            "spaceDelimited",
-            "pipeDelimited",
-            "deepObject"
-          ]
+          "enum": ["form", "spaceDelimited", "pipeDelimited", "deepObject"]
         },
         "explode": {
           "type": "boolean"

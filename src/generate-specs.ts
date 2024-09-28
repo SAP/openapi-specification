@@ -32,8 +32,10 @@ const applyExtension = (sourceSchema: any, extensions: any) => {
   (extensions["x-extends"] as Extension[]).forEach(({ paths, properties }) => {
     paths.forEach((path) => {
       let destinationObject = _.get(destinationSchema, path);
-      destinationObject = Object.assign(destinationObject, properties);
-      _.set(destinationSchema, path, destinationObject);
+      if (destinationObject) {
+        destinationObject = Object.assign(destinationObject, properties);
+        _.set(destinationSchema, path, destinationObject);
+      }
     });
   });
 

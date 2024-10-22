@@ -381,6 +381,37 @@ Example:
 }
 ```
 
+### `x-sap-odm-semantic-key`
+
+- Type: `Array`
+- Used at: [Schema Object](https://spec.openapis.org/oas/v2.0#schema-object)
+- Description: Semantic key(s).
+
+Constraints:
+
+- OPTIONAL
+
+- Array Item:
+
+  - Type: `Object`
+  - Schema:
+
+    | Field Name | Type     | Description                                             |
+    | ---------- | -------- | ------------------------------------------------------- |
+    | name       | `String` | Semantic key name.                                      |
+    | values     | `String` | List of properties which are parts of the semantic key. |
+
+Example:
+
+```json
+[
+  {
+    "name": "CostCenter",
+    "values": ["costCenterId", "validityEndDate", "controllingArea"]
+  }
+]
+```
+
 ### `x-sap-odm-oid`
 
 - Type: `String`

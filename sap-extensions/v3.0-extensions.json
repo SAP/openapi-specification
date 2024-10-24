@@ -6,6 +6,26 @@
     {
       "paths": ["definitions.Schema.properties"],
       "properties": {
+        "x-sap-odm-semantic-key": {
+          "type": "array",
+          "description": "Semantic key is a human-readable identifier used exclusively for the purpose of identifying business objects by the end-user.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Semantic key name."
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "description": "Parts of semantic key."
+                }
+              }
+            }
+          }
+        },
         "x-sap-odm-entity-name": {
           "type": "string",
           "description": "Name of an ODM entity as a general concept, not a concrete version thereof. The annotated schema is one of many representations of the ODM entity. Annotating the schema with this term helps consumers find APIs that process or expose the same entity."

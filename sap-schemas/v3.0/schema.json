@@ -733,7 +733,7 @@
         },
         "x-sap-odm-semantic-key": {
           "type": "array",
-          "description": "To specify semantic key(s).",
+          "description": "Semantic key is a human-readable identifier used exclusively for the purpose of identifying business objects by the end-user.",
           "items": {
             "type": "object",
             "properties": {

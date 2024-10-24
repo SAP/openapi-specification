@@ -385,7 +385,7 @@ Example:
 
 - Type: `Array`
 - Used at: [Schema Object](https://spec.openapis.org/oas/v2.0#schema-object)
-- Description: Semantic key(s).
+- Description: Semantic key is a human-readable identifier used exclusively for the purpose of identifying business objects by the end-user.
 
 Constraints:
 

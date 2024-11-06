@@ -692,6 +692,65 @@
         "xml": {
           "$ref": "#/definitions/XML"
         },
+        "x-sap-dpp-entity-semantics": {
+          "type": "string",
+          "description": "Primary meaning of the personal data in the annotated entity set. Entities annotated with x-sap-dpp-entity-semantics are synonymous to x-sap-dpp-is-potentially-personal.",
+          "enum": ["sap:DataSubject", "sap:DataSubjectDetails", "sap:Other"]
+        },
+        "x-sap-dpp-data-subject-role": {
+          "type": "string",
+          "description": "Role of the data subjects in this set (e.g. employee, customer). Values are application-specific."
+        },
+        "x-sap-dpp-data-subject-role-description": {
+          "type": "string",
+          "description": "Language-dependent description of the role of the data subjects in this set (e.g. employee, customer). Values are application-specific."
+        },
+        "x-sap-dpp-field-semantics": {
+          "type": "string",
+          "description": "Primary meaning of the personal data contained in the annotated property. Changes to values of annotated properties are tracked in the audit log. Use this annotation also on fields that are already marked as contact or address data. Properties annotated with x-sap-dpp-field-semantics need not be additionally annotated with x-sap-dpp-is-potentially-personal.",
+          "enum": [
+            "sap:DataSubjectID",
+            "sap:ConsentID",
+            "sap:PurposeID",
+            "sap:ContractRelatedID",
+            "sap:LegalEntityID",
+            "sap:DataControllerID",
+            "sap:UserID",
+            "sap:EndOfBusinessDate",
+            "sap:BlockingDate",
+            "sap:EndOfRetentionDate"
+          ]
+        },
+        "x-sap-dpp-is-potentially-personal": {
+          "type": "boolean",
+          "default": true,
+          "description": "Property contains potentially personal data. Properties annotated with x-sap-dpp-field-semantics need not be additionally annotated with this extension."
+        },
+        "x-sap-dpp-is-potentially-sensitive": {
+          "type": "boolean",
+          "default": true,
+          "description": "Property contains potentially sensitive personal data"
+        },
+        "x-sap-odm-semantic-key": {
+          "type": "array",
+          "description": "Semantic key is a human-readable identifier used exclusively for the purpose of identifying business objects by the end-user.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Semantic key name."
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "description": "Parts of semantic key."
+                }
+              }
+            }
+          }
+        },
         "x-sap-odm-entity-name": {
           "type": "string",
           "description": "Name of an ODM entity as a general concept, not a concrete version thereof. The annotated schema is one of many representations of the ODM entity. Annotating the schema with this term helps consumers find APIs that process or expose the same entity."

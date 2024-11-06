@@ -335,6 +335,37 @@ Example:
 }
 ```
 
+### `x-sap-odm-semantic-key`
+
+- Type: `Array`
+- Used at: [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
+- Description: Semantic key is a human-readable identifier used exclusively for the purpose of identifying business objects by the end-user.
+
+Constraints:
+
+- OPTIONAL
+
+- Array Item:
+
+  - Type: `Object`
+  - Schema:
+
+    | Field Name | Type     | Description                                             |
+    | ---------- | -------- | ------------------------------------------------------- |
+    | name       | `String` | Semantic key name.                                      |
+    | values     | `String` | List of properties which are parts of the semantic key. |
+
+Example:
+
+```json
+[
+  {
+    "name": "CostCenter",
+    "values": ["costCenterId", "validityEndDate", "controllingArea"]
+  }
+]
+```
+
 ### `x-sap-odm-oid`
 
 - Type: `String`

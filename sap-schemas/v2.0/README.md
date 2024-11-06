@@ -629,12 +629,13 @@ Constraints:
 
 - Type: `Boolean`
 - Used at: [Schema Object](https://spec.openapis.org/oas/v2.0#schema-object)
-- Description: Property contains potentially sensitive personal data. Sensitive personal data is a category of personal data that needs special handling. The determination which personal data is sensitive may differ for different legal areas or industries. 
+- Description: Property contains potentially sensitive personal data. Sensitive personal data is a category of personal data that needs special handling. The determination which personal data is sensitive may differ for different legal areas or industries.
 
-  Examples of sensitive personal data: 
-  - Special categories of personal data, such as data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, trade union membership, genetic data, biometric data, data concerning health or sex life or sexual orientation. 
-  - Personal data subject to professional secrecy. 
-  - Personal data relating to criminal or administrative offenses. 
+  Examples of sensitive personal data:
+
+  - Special categories of personal data, such as data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, trade union membership, genetic data, biometric data, data concerning health or sex life or sexual orientation.
+  - Personal data subject to professional secrecy.
+  - Personal data relating to criminal or administrative offenses.
   - Personal data concerning insurances and bank or credit card accounts.
 
 Constraints:

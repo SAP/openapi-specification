@@ -611,3 +611,39 @@ Constraints:
 
 - OPTIONAL
 - Default: `true`
+
+## AI extensions
+
+### `x-sap-ai-hint`
+
+- Type: `String`
+- Used at:
+  - [Operation Object](https://spec.openapis.org/oas/v3.0.3#operation-object)
+  - [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
+  - [Tag Object](https://spec.openapis.org/oas/v3.0.3#tag-object)
+- Description: Provides a hint for AI consumers (e.g., LLMs) on how to use or interpret the annotated element. Intentionally kept separate from human-readable `description` fields so that end-user-facing documentation and AI-targeted guidance can evolve independently.
+
+Constraints:
+
+- OPTIONAL
+
+Example:
+
+```yaml
+tags:
+  - name: SalesOrders
+    description: Sales order management
+    x-sap-ai-hint: "Covers the full sales order lifecycle. Use the status field to distinguish active orders from archived ones. createdAt is always in UTC."
+
+paths:
+  /sales-orders:
+    get:
+      summary: Get Sales Orders
+      x-sap-ai-hint: "Returns paginated sales order headers. Filter by customerId and createdAt for typical lookups. The response includes status codes as integers — see the SalesOrderStatus schema for the enum mapping."
+
+components:
+  schemas:
+    CurrencyCode:
+      type: string
+      x-sap-ai-hint: "ISO 4217 three-letter currency code, not a symbol."
+```

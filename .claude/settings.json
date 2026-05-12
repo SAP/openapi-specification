@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c ' *)",
+      "Bash(python3 -c \"import json; json.load\\(open\\('/Users/I522722/dev/sap-openapi-spec/sap-extensions/extensions.json'\\)\\); print\\('valid JSON'\\)\")",
+      "Bash(grep -v \"^$\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(list\\(b['properties'].keys\\(\\)\\)\\) for b in d['x-extends']]\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(b['paths'], list\\(b['properties'].keys\\(\\)\\)\\) for b in d['x-extends']]\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(b.get\\('paths'\\), list\\(b['properties'].keys\\(\\)\\)\\) for b in d['x-extends'] if 'properties' in b]\")"
+    ]
+  }
+}

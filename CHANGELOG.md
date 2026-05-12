@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
-- `x-sap-ai-hint` extension for Info Object, Tag Object, Operation Object, Parameter Object, and Schema Object. 
+- `x-sap-ai-hint` extension for Info Object, Operation Object, Parameter Object, and Schema Object. 
   - Provides a hint for AI consumers (e.g., LLMs) on how to use or interpret the annotated element, intentionally kept separate from human-readable `description` fields so that end-user-facing documentation and AI-targeted guidance can evolve independently.
 
 ---

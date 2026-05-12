@@ -619,7 +619,6 @@ Constraints:
 - Type: `String`
 - Used at:
   - [Info Object](https://spec.openapis.org/oas/v3.0.3#info-object)
-  - [Tag Object](https://spec.openapis.org/oas/v3.0.3#tag-object)
   - [Operation Object](https://spec.openapis.org/oas/v3.0.3#operation-object)
   - [Parameter Object](https://spec.openapis.org/oas/v3.0.3#parameter-object)
   - [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
@@ -636,11 +635,6 @@ info:
   title: Sales Order API
   version: 1.0.0
   x-sap-ai-hint: "Entry point for the order-to-cash lifecycle. Start with GET /sales-orders to list orders, then use the returned orderId for all downstream operations. Currency and unit codes follow ISO standards throughout."
-
-tags:
-  - name: SalesOrders
-    description: Sales order management
-    x-sap-ai-hint: "Covers the full sales order lifecycle. Use the status field to distinguish active orders from archived ones. createdAt is always in UTC."
 
 paths:
   /sales-orders:

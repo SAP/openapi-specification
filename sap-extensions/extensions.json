@@ -84,6 +84,34 @@
     },
     {
       "paths": [
+        "definitions.Parameter.properties",
+        "definitions.bodyParameter.properties",
+        "definitions.headerParameterSubSchema.properties",
+        "definitions.queryParameterSubSchema.properties",
+        "definitions.formDataParameterSubSchema.properties",
+        "definitions.pathParameterSubSchema.properties"
+      ],
+      "properties": {
+        "x-sap-ai-hint": {
+          "type": "string",
+          "description": "Provides a hint for AI consumers (e.g., LLMs) on how to use or interpret the annotated element. Intentionally kept separate from human-readable description fields so that end-user-facing documentation and AI-targeted guidance can evolve independently."
+        }
+      }
+    },
+    {
+      "paths": [
+        "definitions.info.properties",
+        "definitions.Info.properties"
+      ],
+      "properties": {
+        "x-sap-ai-hint": {
+          "type": "string",
+          "description": "Provides a hint for AI consumers (e.g., LLMs) on how to use or interpret the annotated element. Intentionally kept separate from human-readable description fields so that end-user-facing documentation and AI-targeted guidance can evolve independently."
+        }
+      }
+    },
+    {
+      "paths": [
         "properties"
       ],
       "properties": {

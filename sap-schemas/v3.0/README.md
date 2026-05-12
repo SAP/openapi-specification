@@ -618,9 +618,11 @@ Constraints:
 
 - Type: `String`
 - Used at:
-  - [Operation Object](https://spec.openapis.org/oas/v3.0.3#operation-object)
-  - [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
+  - [Info Object](https://spec.openapis.org/oas/v3.0.3#info-object)
   - [Tag Object](https://spec.openapis.org/oas/v3.0.3#tag-object)
+  - [Operation Object](https://spec.openapis.org/oas/v3.0.3#operation-object)
+  - [Parameter Object](https://spec.openapis.org/oas/v3.0.3#parameter-object)
+  - [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
 - Description: Provides a hint for AI consumers (e.g., LLMs) on how to use or interpret the annotated element. Intentionally kept separate from human-readable `description` fields so that end-user-facing documentation and AI-targeted guidance can evolve independently.
 
 Constraints:
@@ -630,6 +632,11 @@ Constraints:
 Example:
 
 ```yaml
+info:
+  title: Sales Order API
+  version: 1.0.0
+  x-sap-ai-hint: "Entry point for the order-to-cash lifecycle. Start with GET /sales-orders to list orders, then use the returned orderId for all downstream operations. Currency and unit codes follow ISO standards throughout."
+
 tags:
   - name: SalesOrders
     description: Sales order management
@@ -640,6 +647,10 @@ paths:
     get:
       summary: Get Sales Orders
       x-sap-ai-hint: "Returns paginated sales order headers. Filter by customerId and createdAt for typical lookups. The response includes status codes as integers — see the SalesOrderStatus schema for the enum mapping."
+      parameters:
+        - name: $filter
+          in: query
+          x-sap-ai-hint: "Supports OData-style filter expressions. Only indexed fields (customerId, createdAt, status) are filterable — other fields return 400."
 
 components:
   schemas:

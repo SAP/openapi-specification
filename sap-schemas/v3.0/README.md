@@ -616,7 +616,7 @@ Constraints:
 
 ### `x-sap-ai-hint`
 
-- Type: `String`
+- Type: `String` (Markdown recommended, plain text accepted)
 - Used at:
   - [Info Object](https://spec.openapis.org/oas/v3.0.3#info-object)
   - [Operation Object](https://spec.openapis.org/oas/v3.0.3#operation-object)

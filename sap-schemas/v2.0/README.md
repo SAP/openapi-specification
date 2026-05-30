@@ -682,6 +682,32 @@ Some useful things to include, depending on the element:
 - **Disambiguation** — when a field name is misleading or overlaps with something similar elsewhere
 - **When NOT to use** — especially useful when multiple operations or schemas cover overlapping domains; stating the boundary explicitly helps agents route correctly
 
+
+It is recommended to structure `x-sap-ai-hint` values using **lightweight, semantically structured Markdown**. While the field is a plain string, well-structured content enables AI systems to more reliably extract meaning, identify conditions, and make decisions.
+
+#### Key principles
+
+- **Structure over prose**  
+  Break down information into clearly separated units rather than long paragraphs.
+
+- **Semantic labeling**  
+  Use consistent, explicit labels to identify intent (e.g., **Precondition**, **Side effects**, **Business context**, **When NOT to use**).  
+  This improves machine interpretability beyond visual formatting.
+
+- **Consistency across APIs**  
+  Reuse the same labels and structure patterns across similar operations and schemas.  
+  Predictability is more important than stylistic variation.
+
+- **Use lightweight Markdown only**  
+  Prefer simple constructs:
+  - bullet points or numbered lists.
+  - bold emphasis for labels.
+  - `inline code` for fields, values, and endpoints/operation identifiers,  
+
+  Avoid complex formatting (tables, deep nesting), which may reduce parsing reliability.
+
+- **Keep content atomic and scannable**  
+  Each bullet or line should express a single idea to support extraction and reasoning.
 Example:
 
 ```yaml

@@ -651,6 +651,13 @@ Some useful things to include, depending on the element:
 - **Disambiguation** — when a field name is misleading or overlaps with something similar elsewhere
 - **When NOT to use** — especially useful when multiple operations or schemas cover overlapping domains; stating the boundary explicitly helps agents route correctly
 
+Structure `x-sap-ai-hint` values using **lightweight, semantically structured Markdown** — well-structured content enables AI systems to more reliably extract meaning, identify conditions, and route decisions:
+
+- **Use consistent labels** — mirror the categories above (e.g., **Precondition:**, **Side effects:**, **When NOT to use:**) so AI systems can extract meaning beyond visual formatting.
+- **Keep content atomic** — one idea per bullet or line; avoid long prose paragraphs.
+- **Reuse patterns across APIs** — predictability across operations matters more than stylistic variation.
+- **Lightweight Markdown only** — bullets, bold labels, `inline code` for fields and identifiers. Avoid tables and deep nesting.
+
 Example:
 
 ```yaml

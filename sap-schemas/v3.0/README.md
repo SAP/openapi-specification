@@ -30,6 +30,16 @@ Constraints:
 
 - OPTIONAL
 
+### `x-sap-oauth-parameter`
+
+- Type: `Object`
+- Used at: [OpenAPI Object](https://spec.openapis.org/oas/v3.0.3#oauth-flow-object) (root level)
+- Description: To describe additional authentication parameters to be passed during oauth authentication flow.
+
+Constraints:
+
+- OPTIONAL
+
 ### `x-sap-shortText`
 
 - Type: `String`

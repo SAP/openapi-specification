@@ -45,6 +45,14 @@
       "description": "The compliance level that this API resource is expected to be compliant with. This corresponds to the [ORD policy level](https://pages.github.tools.sap/CentralEngineering/open-resource-discovery-specification/#/v1/generated/Document?id=package_policylevel) concept.",
       "enum": ["sap:base:v1", "sap:core:v1", "sap:core:v2"]
     },
+    "x-sap-oauth-parameter": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\.\\-_]+$": {
+          "$ref": "#/definitions/Parameter"
+        }
+      }
+    },
     "x-sap-shortText": {
       "type": "string",
       "description": "To display a short description of your APIs"

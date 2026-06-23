@@ -46,7 +46,8 @@
       "enum": ["sap:base:v1", "sap:core:v1", "sap:core:v2"]
     },
     "x-sap-oauth-body-parameter": {
-      "$ref": "#/definitions/RequestBody"
+      "$ref": "#/definitions/RequestBody",
+      "description": "To describe additional authentication parameters to be passed during oauth authentication flow."
     },
     "x-sap-shortText": {
       "type": "string",

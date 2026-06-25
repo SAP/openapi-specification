@@ -35,9 +35,10 @@ Constraints:
 - Type: `Object`
 - Used at: [OpenAPI Object](https://spec.openapis.org/oas/v3.0.3#oauth-flow-object) (root level)
 - Description: To describe additional authentication parameters to be passed during oauth authentication flow.
-- Example: 
+- Example:
+
 ```json
-  {
+{
   "components": {
     "securitySchemes": {
       "oauth2": {
@@ -51,23 +52,19 @@ Constraints:
             },
             "x-sap-oauth-body-parameter": {
               "description": "The additional parameter to be passed during oauth authentication",
-              "content": {
-                "application/x-www-form-urlencoded": {
-                  "schema": {
-                    "type": "object",
-                    "properties": {
-                      "resource": {
-                        "type": "string",
-                        "description": "dentifies the target API for which the token is being requested. Ensures the token is audience-bound to this specific API. Value format: urn:sap:identity:application:provider:name:public_api:{clientId}",
-                        "pattern": "urn:sap:identity:application:provider:name:public_api:{clientId}"
-                      },
-                      "tenantId" : {
-                        "type": "string",
-                        "description": "Tenant identifier. Required for multi-tenant deployments.",
-                        "pattern": "^[a-zA-Z0-9_-]+$",
-                        "example": "my-tenant-id"
-                      }
-                    }
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "resource": {
+                    "type": "string",
+                    "description": "dentifies the target API for which the token is being requested. Ensures the token is audience-bound to this specific API. Value format: urn:sap:identity:application:provider:name:public_api:{clientId}",
+                    "pattern": "urn:sap:identity:application:provider:name:public_api:{clientId}"
+                  },
+                  "tenantId": {
+                    "type": "string",
+                    "description": "Tenant identifier. Required for multi-tenant deployments.",
+                    "pattern": "^[a-zA-Z0-9_-]+$",
+                    "example": "my-tenant-id"
                   }
                 }
               }
@@ -78,7 +75,6 @@ Constraints:
     }
   }
 }
-
 ```
 
 Constraints:

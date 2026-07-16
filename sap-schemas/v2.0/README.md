@@ -712,6 +712,7 @@ In both cases, the content should be optimized for an AI agent that needs to dec
 Constraints:
 
 - OPTIONAL
+- Maximum length: 4000 characters
 
 ### Best practices
 
@@ -729,12 +730,15 @@ Some useful things to include, depending on the element:
 - **Disambiguation** — when a field name is misleading or overlaps with something similar elsewhere
 - **When NOT to use** — especially useful when multiple operations or schemas cover overlapping domains; stating the boundary explicitly helps agents route correctly
 
-Structure `x-sap-ai-hint` values using **lightweight, semantically structured Markdown** — well-structured content enables AI systems to more reliably extract meaning, identify conditions, and route decisions:
+Plain text is accepted. Where content is structured (sections, conditions, lists), it SHOULD use **lightweight Markdown** — well-structured content enables AI systems to more reliably extract meaning, identify conditions, and route decisions:
 
-- **Use consistent labels** — mirror the categories above (e.g., **Precondition:**, **Side effects:**, **When NOT to use:**) so AI systems can extract meaning beyond visual formatting.
-- **Keep content atomic** — one idea per bullet or line; avoid long prose paragraphs.
-- **Reuse patterns across APIs** — predictability across operations matters more than stylistic variation.
-- **Lightweight Markdown only** — bullets, bold labels, `inline code` for fields and identifiers. Avoid tables and deep nesting.
+#### Key principles
+
+- **Structure over prose** — break information into clearly separated units rather than long paragraphs.
+- **Semantic labeling** — use consistent, explicit labels to identify intent (e.g., **Precondition**, **Side effects**, **Business context**, **When NOT to use**). This improves machine interpretability beyond visual formatting.
+- **Consistency across APIs** — reuse the same labels and structure patterns across similar operations and schemas. Predictability matters more than stylistic variation.
+- **Lightweight Markdown only** — prefer bullets, bold labels, and `inline code` for fields and identifiers. Avoid tables and deep nesting, which may reduce parsing reliability.
+- **Keep content atomic and scannable** — one idea per bullet or line to support extraction and reasoning.
 
 Example:
 

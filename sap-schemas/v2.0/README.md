@@ -24,11 +24,58 @@ Fully compiled and ready to use JSON Schema file is available [here](./schema.js
   - `sap:core:v1`
   - `sap:core:v2`
 - Used at: [Swagger Object](https://spec.openapis.org/oas/v2.0#swagger-object) (root level)
-- Description: The compliance level that this API resource is expected to be compliant with. This corresponds to the [ORD policy level](https://pages.github.tools.sap/CentralEngineering/open-resource-discovery-specification/#/v1/generated/Document?id=package_policylevel) concept.
+- Description: The compliance level that this API resource is expected to be compliant with. This corresponds to the [ORD policy level](https://open-resource-discovery.github.io/specification/spec-extensions/policy-levels) concept.
 
 Constraints:
 
 - OPTIONAL
+
+### `x-sap-oauth-body-parameter`
+
+- Type: `Object`
+- Used at: [OpenAPI Object](https://spec.openapis.org/oas/v3.0.3#oauth-flow-object) (root level)
+- Description: To describe additional authentication parameters to be passed during oauth authentication flow.
+- Example:
+
+```json
+{
+  "components": {
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://your-auth-server/oauth/token",
+            "scopes": {
+              "api:read": "Read access",
+              "api:write": "Write access"
+            },
+            "x-sap-oauth-body-parameter": {
+              "description": "The additional parameter to be passed during oauth authentication",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "resource": {
+                    "type": "string",
+                    "description": "dentifies the target API for which the token is being requested. Ensures the token is audience-bound to this specific API. Value format: urn:sap:identity:application:provider:name:public_api:{clientId}",
+                    "pattern": "urn:sap:identity:application:provider:name:public_api:{clientId}"
+                  },
+                  "tenantId": {
+                    "type": "string",
+                    "description": "Tenant identifier. Required for multi-tenant deployments.",
+                    "pattern": "^[a-zA-Z0-9_-]+$",
+                    "example": "my-tenant-id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 ### `x-sap-shortText`
 
@@ -192,7 +239,7 @@ Constraints:
 
 - OPTIONAL
 - MUST follow the ORD `extensible` object contract
-  - See [ORD Extensible Object Interface](https://pages.github.tools.sap/CentralEngineering/open-resource-discovery-specification/#/v1/generated/Document?id=extensible)
+  - See [ORD Extensible Object Interface](https://open-resource-discovery.github.io/specification/spec-v1/interfaces/document#extensible)
 
 Example:
 
@@ -230,14 +277,14 @@ Example:
 ### `x-sap-ord-id`
 
 - Type: `String`
-- Format: Valid [ORD ID for API Resources](https://sap.github.io/open-resource-discovery/spec-v1/interfaces/document#api-resource_ordid)
+- Format: Valid [ORD ID for API Resources](https://open-resource-discovery.github.io/specification/spec-v1/interfaces/document#api-resource_ordid)
 - Used at: [Swagger Object](https://spec.openapis.org/oas/v2.0#swagger-object) (root level)
 - Description: The ORD ID can be used to lookup more high-level metadata via Business Accelerator Hub or Unified Customer Landscape. It is also used when describing Integration Dependencies.
 
 Constraints:
 
 - OPTIONAL
-- MUST be a valid [ORD ID](https://sap.github.io/open-resource-discovery/spec-v1/#ord-id) for [API Resources](https://sap.github.io/open-resource-discovery/spec-v1/interfaces/document#api-resource_ordid)
+- MUST be a valid [ORD ID](https://open-resource-discovery.github.io/specification/spec-v1/#ord-id) for [API Resources](https://open-resource-discovery.github.io/specification/spec-v1/interfaces/document#api-resource_ordid)
   - Regexp: `^([a-z0-9]+(?:[.][a-z0-9]+)*):(apiResource):([a-zA-Z0-9._\-]+):(v0|v[1-9][0-9]*)$`
 
 Example:

@@ -683,8 +683,10 @@ Constraints:
 In both cases, the content should be optimized for an AI agent that needs to decide *whether* and *how* to use the element — not for a developer reading reference docs.
 
 Constraints:
-
 - OPTIONAL
+- MAY contain markdown
+- Markdown SHOULD be used for structured content, e.g. lists, options, tabular data, etc.
+- Maximum length: 4000 characters
 
 ### Best practices
 

@@ -1325,7 +1325,9 @@
             "sap:UserID",
             "sap:EndOfBusinessDate",
             "sap:BlockingDate",
-            "sap:EndOfRetentionDate"
+            "sap:IsBlockedIndicator",
+            "sap:EndOfRetentionDate",
+            "sap:DataCategoryID"
           ]
         },
         "x-sap-dpp-is-potentially-personal": {
@@ -1336,7 +1338,18 @@
         "x-sap-dpp-is-potentially-sensitive": {
           "type": "boolean",
           "default": true,
-          "description": "Property contains potentially sensitive personal data. Sensitive personal data is a category of personal data that needs special handling. The determination which personal data is sensitive may differ for different legal areas or industries. Examples of sensitive personal data: 1. Special categories of personal data, such as data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, trade union membership, genetic data, biometric data, data concerning health or sex life or sexual orientation. 2. Personal data subject to professional secrecy. 3. Personal data relating to criminal or administrative offenses. 4. Personal data concerning insurances and bank or credit card accounts."
+          "description": "Property or entity containing potentially sensitive personal data. Sensitive personal data is a category of personal data that needs special handling. The determination which personal data is sensitive may differ for different legal areas or industries. Examples of sensitive personal data: 1. Special categories of personal data, such as data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, trade union membership, genetic data, biometric data, data concerning health or sex life or sexual orientation. 2. Personal data subject to professional secrecy. 3. Personal data relating to criminal or administrative offenses. 4. Personal data concerning insurances and bank or credit card accounts."
+        },
+        "x-sap-dpp-related-data-category-id": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The annotation value is an array of strings, enabling the assignment of multiple data categories to one entity or field. Data categories are entities describing a particular set of personal data with a similar usage, meaning, quality, and risk. The strings must adhere to the format of an Correlation ID corresponding to the concept name dataCategory in conjunction with an localIdentifier introduced herein (refer to [ORD Specification | Open Resource Discovery](https://open-resource-discovery.org/spec-v1#correlation-id)).",
+          "examples": [
+            "sap.s4com:dataCategory:SalesOrder",
+            "sap.s4com:dataCategory:PurchaseContract"
+          ]
         },
         "x-sap-oauth-body-parameter": {
           "$ref": "#/definitions/schema",

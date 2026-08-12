@@ -712,6 +712,8 @@ In both cases, the content should be optimized for an AI agent that needs to dec
 Constraints:
 
 - OPTIONAL
+- MAY contain markdown
+- Markdown SHOULD be used for structured content, e.g. lists, options, tabular data, etc.
 - Maximum length: 4000 characters
 
 ### Best practices

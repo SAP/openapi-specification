@@ -718,8 +718,6 @@ Constraints:
 
 ### Best practices
 
-> See also: [AI-Ready APIs guideline](https://pages.github.tools.sap/CPA/api-guidelines/common-guidelines/ai-ready-apis/) for the broader context on AI-optimized descriptions.
-
 Unlike human-facing descriptions, `x-sap-ai-hint` can be explicit about pre- and post-conditions, invocation patterns, and semantic context that would clutter end-user documentation. Focus on what an AI agent needs to decide *whether* and *how* to use the element.
 
 Some useful things to include, depending on the element:

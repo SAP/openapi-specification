@@ -263,6 +263,10 @@
         },
         "version": {
           "type": "string"
+        },
+        "x-sap-ai-hint": {
+          "type": "string",
+          "description": "Provides a hint for AI consumers (e.g., LLMs) on how to use or interpret the annotated element. Markdown is recommended but plain text is accepted. Intentionally kept separate from human-readable description fields so that end-user-facing documentation and AI-targeted guidance can evolve independently."
         }
       },
       "patternProperties": {
@@ -731,6 +735,10 @@
           "default": true,
           "description": "Property contains potentially sensitive personal data. Sensitive personal data is a category of personal data that needs special handling. The determination which personal data is sensitive may differ for different legal areas or industries. Examples of sensitive personal data: 1. Special categories of personal data, such as data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, trade union membership, genetic data, biometric data, data concerning health or sex life or sexual orientation. 2. Personal data subject to professional secrecy. 3. Personal data relating to criminal or administrative offenses. 4. Personal data concerning insurances and bank or credit card accounts."
         },
+        "x-sap-ai-hint": {
+          "type": "string",
+          "description": "Provides a hint for AI consumers (e.g., LLMs) on how to use or interpret the annotated element. Markdown is recommended but plain text is accepted. Intentionally kept separate from human-readable description fields so that end-user-facing documentation and AI-targeted guidance can evolve independently."
+        },
         "x-sap-oauth-body-parameter": {
           "$ref": "#/definitions/Schema",
           "description": "To describe additional authentication parameters to be passed during oauth authentication flow."
@@ -1144,6 +1152,10 @@
             "$ref": "#/definitions/Server"
           }
         },
+        "x-sap-ai-hint": {
+          "type": "string",
+          "description": "Provides a hint for AI consumers (e.g., LLMs) on how to use or interpret the annotated element. Markdown is recommended but plain text is accepted. Intentionally kept separate from human-readable description fields so that end-user-facing documentation and AI-targeted guidance can evolve independently."
+        },
         "x-sap-operation-intent": {
           "type": "string",
           "enum": [
@@ -1385,6 +1397,10 @@
               }
             ]
           }
+        },
+        "x-sap-ai-hint": {
+          "type": "string",
+          "description": "Provides a hint for AI consumers (e.g., LLMs) on how to use or interpret the annotated element. Markdown is recommended but plain text is accepted. Intentionally kept separate from human-readable description fields so that end-user-facing documentation and AI-targeted guidance can evolve independently."
         }
       },
       "patternProperties": {

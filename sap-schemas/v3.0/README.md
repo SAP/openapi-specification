@@ -662,3 +662,94 @@ Constraints:
 
 - OPTIONAL
 - Default: `true`
+
+## AI extensions
+
+### `x-sap-ai-hint`
+
+- Type: `String` (Markdown recommended, plain text accepted)
+- Used at:
+  - [Info Object](https://spec.openapis.org/oas/v3.0.3#info-object)
+  - [Operation Object](https://spec.openapis.org/oas/v3.0.3#operation-object)
+  - [Parameter Object](https://spec.openapis.org/oas/v3.0.3#parameter-object)
+  - [Schema Object](https://spec.openapis.org/oas/v3.0.3#schema-object)
+- Description: Provides a hint for AI consumers (e.g., LLMs) on how to use or interpret the annotated element. Intentionally kept separate from human-readable `description` fields so that end-user-facing documentation and AI-targeted guidance can evolve independently.
+
+`x-sap-ai-hint` serves two roles depending on whether a `description` is already present:
+
+- **Complementary** — when a `description` exists for human readers, use `x-sap-ai-hint` to add AI-specific context that would clutter or be out of place in the human-facing description: routing guidance, preconditions, side effects, related operations, or disambiguation against similar elements.
+- **Standalone** — when no `description` is present (common for internal or machine-generated APIs), `x-sap-ai-hint` can serve as the sole description, written entirely for AI consumption rather than end-user documentation.
+
+In both cases, the content should be optimized for an AI agent that needs to decide _whether_ and _how_ to use the element — not for a developer reading reference docs.
+
+Constraints:
+
+- OPTIONAL
+- MAY contain markdown
+- Markdown SHOULD be used for structured content, e.g. lists, options, tabular data, etc.
+- Maximum length: 4000 characters
+
+### Best practices
+
+Unlike human-facing descriptions, `x-sap-ai-hint` can be explicit about pre- and post-conditions, invocation patterns, and semantic context that would clutter end-user documentation. Focus on what an AI agent needs to decide _whether_ and _how_ to use the element.
+
+Some useful things to include, depending on the element:
+
+- **Business context** — what business activity this covers, and when to prefer it over similar operations or schemas
+- **Preconditions** — required permissions, scopes, or system state the agent should verify first
+- **Side effects** — what gets created, modified, or triggered as a result
+- **Common patterns** — typical workflows or call sequences this element participates in
+- **Format and value constraints** — coding standards (ISO, internal enums, picklists), indexed vs. non-indexed fields, what happens on constraint violations
+- **Disambiguation** — when a field name is misleading or overlaps with something similar elsewhere
+- **When NOT to use** — especially useful when multiple operations or schemas cover overlapping domains; stating the boundary explicitly helps agents route correctly
+
+Structure `x-sap-ai-hint` values using **lightweight, semantically structured Markdown** — well-structured content enables AI systems to more reliably extract meaning, identify conditions, and route decisions:
+
+- **Use consistent labels** — mirror the categories above (e.g., **Precondition:**, **Side effects:**, **When NOT to use:**) so AI systems can extract meaning beyond visual formatting.
+- **Keep content atomic** — one idea per bullet or line; avoid long prose paragraphs.
+- **Reuse patterns across APIs** — predictability across operations matters more than stylistic variation.
+- **Lightweight Markdown only** — bullets, bold labels, `inline code` for fields and identifiers. Avoid tables and deep nesting.
+
+Example:
+
+```yaml
+info:
+  title: Sales Order API
+  version: 1.0.0
+  x-sap-ai-hint:
+    "Manages the order-to-cash lifecycle. Start with GET /sales-orders to
+    find orders, then use the returned orderId for all downstream operations. All amounts
+    use ISO 4217 currency codes and ISO 8601 dates throughout."
+
+paths:
+  /sales-orders:
+    get:
+      summary: List Sales Orders
+      description: Returns a paginated list of sales order headers.
+      # description is for human readers; x-sap-ai-hint adds agent-specific context
+      x-sap-ai-hint:
+        "Use to search or filter orders by customer, date range, or status.
+        Returns headers only — fetch line items via GET /sales-orders/{orderId}/items.
+        Requires read_orders scope. Not suitable for bulk exports; use the reporting
+        API for large data volumes."
+      parameters:
+        - name: $filter
+          in: query
+          x-sap-ai-hint:
+            "OData-style filter expression, e.g. customerId eq 'C1001' and
+            status eq 2. Only indexed fields (customerId, createdAt, status) are
+            filterable — other fields return 400."
+    post:
+      summary: Create Sales Order
+      x-sap-ai-hint:
+        "Creates a draft sales order. The customer account must exist and
+        be active (verify via GET /customers/{id}). Returns the new orderId. Does not
+        reserve inventory or trigger fulfillment — call POST /sales-orders/{orderId}/submit
+        to initiate the fulfillment workflow."
+
+components:
+  schemas:
+    CurrencyCode:
+      type: string
+      x-sap-ai-hint: "ISO 4217 three-letter code (e.g. USD, EUR). Do not use currency symbols."
+```

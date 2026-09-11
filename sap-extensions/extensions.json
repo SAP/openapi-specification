@@ -187,13 +187,19 @@
                   "type": "string",
                   "pattern": "^[Dd][Ee][Cc][Oo][Mm][Mm][Ii][Ss][Ss][Ii][Oo][Nn][Ee][Dd]$",
                   "description": "Indicates API status."
-                }
+                },
+                {
+                  "type": "string", 
+                  "pattern": "^[Dd][Ee][Vv][Ee][Ll][Oo][Pp][Mm][Ee][Nn][Tt]$",
+                  "description": "Indicates API status."
+                } 
               ],
               "examples": [
                 "Beta",
                 "Active",
                 "Deprecated",
-                "Decommissioned"
+                "Decommissioned",
+                "Development"
               ]
             },
             "deprecationDate": {

@@ -268,9 +268,7 @@
           "type": "string",
           "minLength": 1,
           "description": "A description about the extensibility capabilities of this API, notated in [CommonMark](https://spec.commonmark.org/) (Markdown).\n\nThis description may contain detailed steps on how to extend the API.\nLinks to external resources can be provided within the description as markdown links.\n\nThis description MUST be provided if `supported` is set to `manual` or `automatic`.",
-          "examples": [
-            "Please find the extensibility documentation [here](#here)"
-          ]
+          "examples": ["Please find the extensibility documentation [here](#here)"]
         }
       },
       "additionalProperties": false,
@@ -1256,28 +1254,12 @@
         "type": {
           "anyOf": [
             {
-              "enum": [
-                "array",
-                "boolean",
-                "integer",
-                "null",
-                "number",
-                "object",
-                "string"
-              ]
+              "enum": ["array", "boolean", "integer", "null", "number", "object", "string"]
             },
             {
               "type": "array",
               "items": {
-                "enum": [
-                  "array",
-                  "boolean",
-                  "integer",
-                  "null",
-                  "number",
-                  "object",
-                  "string"
-                ]
+                "enum": ["array", "boolean", "integer", "null", "number", "object", "string"]
               },
               "minItems": 1,
               "uniqueItems": true

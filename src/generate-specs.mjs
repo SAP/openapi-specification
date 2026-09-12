@@ -40,7 +40,7 @@ function generateSchema(version) {
   const schema = applyExtension(withCommonExtensions, extensionSchemas[version]);
   const destination = new URL(`../sap-schemas/v${version}/schema.json`, import.meta.url);
 
-  writeFileSync(destination, JSON.stringify(schema, null, 2));
+  writeFileSync(destination, `${JSON.stringify(schema, null, 2)}\n`);
 }
 
 generateSchema("2.0");

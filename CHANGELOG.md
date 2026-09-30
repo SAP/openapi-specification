@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [[0.16.0](https://github.com/SAP/openapi-specification/releases/tag/v0.16.0)] - 2026-09-30
+
 ### Added
 
 - `x-sap-ai-hint` extension for Info Object, Operation Object, Parameter Object, and Schema Object (#41).
@@ -15,17 +17,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - `x-sap-stateInfo` now accepts `Development` as an API lifecycle state, in addition to `Beta`, `Active`, `Deprecated`, and `Decommissioned` (#46).
-
-### Fixed
-
-- Corrected incorrect links in the v2.0 and v3.0 README documentation (#35).
-
-### Miscellaneous
-
-- Switched npm publishing to trusted publishing for npmjs.com (#34).
-- Migrated REUSE licensing metadata from the `.reuse/dep5` file to `REUSE.toml` (#33).
-
----
 
 ## 2024-11-18 (#31)
 

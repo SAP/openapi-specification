@@ -1,19 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "target": "ES2024",
+    "module": "Node16",
+    "moduleResolution": "Node16",
     "declaration": true,
     "outDir": "dist",
     "rootDir": ".",
-    "baseUrl": ".",
     "allowJs": false,
     "strict": true,
     "esModuleInterop": true,
-    "inlineSourceMap": true,
     "resolveJsonModule": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/index.ts"],
   "exclude": ["node_modules", "dist"]
 }

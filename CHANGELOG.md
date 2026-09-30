@@ -8,8 +8,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
-- `x-sap-ai-hint` extension for Info Object, Operation Object, Parameter Object, and Schema Object. 
+- `x-sap-ai-hint` extension for Info Object, Operation Object, Parameter Object, and Schema Object (#41).
   - Provides a hint for AI consumers (e.g., LLMs) on how to use or interpret the annotated element, intentionally kept separate from human-readable `description` fields so that end-user-facing documentation and AI-targeted guidance can evolve independently.
+- `x-sap-oauth-body-parameter` on OpenAPI Object (root level) (#42). Describes additional authentication parameters to be passed during the OAuth authentication flow.
+
+### Changed
+
+- `x-sap-stateInfo` now accepts `Development` as an API lifecycle state, in addition to `Beta`, `Active`, `Deprecated`, and `Decommissioned` (#46).
+
+### Fixed
+
+- Corrected incorrect links in the v2.0 and v3.0 README documentation (#35).
+
+### Miscellaneous
+
+- Switched npm publishing to trusted publishing for npmjs.com (#34).
+- Migrated REUSE licensing metadata from the `.reuse/dep5` file to `REUSE.toml` (#33).
 
 ---
 
